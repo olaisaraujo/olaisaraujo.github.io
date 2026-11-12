@@ -1,12 +1,468 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Meu primeiro site</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laís Araujo — Product Designer | UX/UI</title>
+  <meta name="description" content="Portfólio de Laís Araujo, Product Designer e UX/UI Designer em São Paulo. Pesquisa, prototipação e Design System para produtos digitais.">
+  <meta property="og:title" content="Laís Araujo — Product Designer">
+  <meta property="og:description" content="Bem-vindo ao meu universo de design, onde cada pixel tem um propósito.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Unbounded:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css?v=48">
+  <link rel="stylesheet" href="styles/main.css?v=48">
+  <link rel="stylesheet" href="styles/home.css?v=48">
+  <link rel="stylesheet" href="styles/motion.css?v=48">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <h1>Olá, este site está no ar</h1>
-  <p>Meu primeiro site no GitHub Pages.</p>
-  <a href="https://github.com">Meu GitHub</a>
+  <!-- Tela de abertura (animação do logo, 1x por visita; dá para pular) -->
+  <div class="preloader" data-preloader>
+    <svg viewBox="0 0 800 500" class="logo-intro__svg" aria-hidden="true">
+      <g id="li-cam">
+        <g id="li-logo" transform="scale(2.136) translate(0 -59.74)">
+          <defs><clipPath id="li-lClip"><rect id="li-lRect" x="57" y="0" width="20.7" height="59.74"/></clipPath></defs>
+          <g id="li-gO"><path d="M27.4507 61.0418C21.9606 61.0418 17.1447 60.1268 13.003 58.2968C8.90945 56.4667 5.70687 53.8902 3.39522 50.5672C1.13174 47.2442 0 43.3915 0 39.009C0 34.5784 1.13174 30.7015 3.39522 27.3786C5.70687 24.0556 8.90945 21.4791 13.003 19.649C17.1447 17.819 21.9606 16.9039 27.4507 16.9039C32.9409 16.9039 37.7327 17.819 41.8263 19.649C45.968 21.4791 49.1706 24.0556 51.434 27.3786C53.7457 30.7015 54.9015 34.5784 54.9015 39.009C54.9015 43.3915 53.7457 47.2442 51.434 50.5672C49.1706 53.8902 45.968 56.4667 41.8263 58.2968C37.7327 60.1268 32.9409 61.0418 27.4507 61.0418ZM27.4507 47.6777C29.3771 47.6777 30.9904 47.3406 32.2907 46.6663C33.6392 45.9921 34.6505 45.0048 35.3248 43.7045C36.0472 42.4042 36.4084 40.8391 36.4084 39.009C36.4084 37.1308 36.0472 35.5415 35.3248 34.2412C34.6505 32.9409 33.6392 31.9537 32.2907 31.2795C30.9904 30.6052 29.3771 30.2681 27.4507 30.2681C25.5725 30.2681 23.9592 30.6052 22.6107 31.2795C21.2623 31.9537 20.2269 32.9409 19.5045 34.2412C18.8302 35.5415 18.4931 37.1308 18.4931 39.009C18.4931 40.8391 18.8302 42.4042 19.5045 43.7045C20.2269 45.0048 21.2623 45.9921 22.6107 46.6663C23.9592 47.3406 25.5725 47.6777 27.4507 47.6777Z"/></g>
+          <g id="li-gL"><path clip-path="url(#li-lClip)" d="M76.7052 5.5625V78.806L68.3255 67.7239H220V83.7314H58.0676V5.5625H76.7052Z"/></g>
+          <g id="li-gA"><path d="M121.801 59.7416L119.706 45.0771L121.801 39.009L119.706 33.0132L121.801 18.2042H140.872L137.983 38.9368L140.872 59.7416H121.801ZM125.63 39.009C125.148 43.4397 123.944 47.3165 122.018 50.6395C120.14 53.9143 117.66 56.4667 114.577 58.2968C111.543 60.1268 108.052 61.0418 104.103 61.0418C100.057 61.0418 96.4936 60.1268 93.4114 58.2968C90.3774 56.4667 87.9935 53.8902 86.2598 50.5672C84.5742 47.2442 83.7314 43.3915 83.7314 39.009C83.7314 34.5784 84.5742 30.7015 86.2598 27.3786C87.9935 24.0556 90.3774 21.4791 93.4114 19.649C96.4936 17.819 100.057 16.9039 104.103 16.9039C108.052 16.9039 111.543 17.819 114.577 19.649C117.66 21.4309 120.164 23.9833 122.09 27.3063C124.017 30.5812 125.197 34.482 125.63 39.009ZM102.225 39.009C102.225 40.5983 102.538 42.019 103.164 43.2711C103.838 44.4751 104.753 45.4383 105.909 46.1607C107.113 46.883 108.485 47.2442 110.026 47.2442C111.616 47.2442 113.157 46.883 114.65 46.1607C116.143 45.4383 117.443 44.4751 118.551 43.2711C119.706 42.019 120.501 40.5983 120.934 39.009C120.501 37.4198 119.706 35.9991 118.551 34.7469C117.443 33.4948 116.143 32.5075 114.65 31.7851C113.157 31.0627 111.616 30.7015 110.026 30.7015C108.485 30.7015 107.113 31.0627 105.909 31.7851C104.753 32.5075 103.838 33.4948 103.164 34.7469C102.538 35.9991 102.225 37.4198 102.225 39.009Z"/></g>
+          <g id="li-gI"><path d="M144.525 17.3373L153.699 19.2155L162.874 17.3373V59.7415H144.525V17.3373Z"/></g>
+          <g id="li-gS"><path d="M219.119 45.5827C219.119 49.0502 218.036 51.9398 215.868 54.2514C213.701 56.5149 210.667 58.2245 206.766 59.3804C202.914 60.488 198.387 61.0418 193.185 61.0418C187.84 61.0418 183.12 60.4158 179.027 59.1636C174.981 57.8633 171.779 56.0574 169.419 53.7457C167.107 51.4341 165.879 48.7372 165.735 45.655H184.372C184.709 46.57 185.287 47.3406 186.106 47.9666C186.925 48.5445 187.984 49.002 189.284 49.3392C190.633 49.6281 192.27 49.7726 194.197 49.7726C196.508 49.7726 198.266 49.5559 199.47 49.1224C200.674 48.6409 201.276 47.9907 201.276 47.172C201.276 46.3533 200.77 45.7754 199.759 45.4383C198.748 45.1012 197.11 44.8604 194.847 44.7159L188.056 44.2824C182.807 43.9453 178.617 43.2711 175.487 42.2598C172.405 41.2003 170.189 39.7796 168.841 37.9977C167.492 36.2158 166.818 34.0727 166.818 31.5684C166.818 28.2454 167.854 25.5004 169.924 23.3332C172.043 21.166 174.981 19.5527 178.738 18.4932C182.494 17.4337 186.876 16.9039 191.885 16.9039C196.797 16.9039 201.156 17.53 204.96 18.7821C208.765 19.9861 211.823 21.6958 214.135 23.9111C216.446 26.1264 217.795 28.7029 218.18 31.6407H199.542C199.302 30.7738 198.82 30.0273 198.098 29.4012C197.375 28.7752 196.436 28.2936 195.28 27.9565C194.124 27.6194 192.728 27.4508 191.09 27.4508C188.875 27.4508 187.262 27.7157 186.25 28.2454C185.239 28.727 184.733 29.3772 184.733 30.1959C184.733 30.9664 185.046 31.5203 185.673 31.8574C186.299 32.1463 187.527 32.339 189.357 32.4353L198.459 33.0132C203.66 33.3021 207.754 33.9764 210.739 35.0359C213.773 36.0472 215.917 37.4198 217.169 39.1535C218.469 40.8872 219.119 43.0303 219.119 45.5827Z"/></g>
+          <g id="li-gAc"><path d="M129.873 0H112.247L103 14.4478H119.759L129.873 0Z"/></g>
+        </g>
+        <text id="li-design" class="design" x="124" y="96" textLength="346" lengthAdjust="spacing">design</text>
+        <g id="li-caps" class="cap" display="none">
+          <text id="li-cO" text-anchor="end">o</text>
+          <text id="li-cLa">lá</text>
+          <text id="li-cComma">,</text>
+          <text id="li-cLais"><tspan id="li-cLaisLa">la</tspan><tspan id="li-cLaisIs">ís</tspan></text>
+        </g>
+      </g>
+    </svg>
+    <button class="logo-intro__skip" type="button" data-intro-skip data-i18n="intro.skip">pular intro</button>
+  </div>
+  <a class="skip-link btn btn--primary" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============ Header ============ -->
+  <!-- Sem fundo, fixo no topo: some ao descer e volta ao subir -->
+  <header class="site-header site-header--overlay">
+    <div class="container site-header__inner">
+      <a href="#inicio" aria-label="olaís — início"><span class="logo" aria-hidden="true"></span></a>
+      <nav class="site-nav" aria-label="Principal">
+        <a href="#sobre" data-i18n="nav.about">sobre</a>
+        <a href="#projetos" data-i18n="nav.projects">projetos</a>
+        <a href="#feedbacks" data-i18n="nav.feedbacks">feedbacks</a>
+        <a href="#contato" data-i18n="nav.contact">contato</a>
+      </nav>
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR" aria-label="Português">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+        </div>
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="assets/icons.svg#moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="assets/icons.svg#sun"/></svg>
+        </button>
+        <a class="btn btn--outline" href="https://www.linkedin.com/in/laisaaraujo/" target="_blank" rel="noopener">LinkedIn
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+        <!-- WhatsApp (55 + DDD + número, só dígitos) -->
+        <a class="btn btn--primary" href="https://wa.me/5511966239797" target="_blank" rel="noopener">WhatsApp
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chat"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="menu-toggle" aria-label="Atalhos">
+    <a href="#projetos" class="is-active"><span data-i18n="nav.projects">projetos</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+    <a href="#contato" data-i18n="nav.talk">fale comigo</a>
+  </nav>
+
+  <main id="conteudo">
+    <!-- ============ 1. Hero ============ -->
+    <section class="intro" id="inicio" data-nebula>
+      <div class="starfield" aria-hidden="true"></div>
+      <!-- Foto em silhueta (PNG com fundo transparente), à direita como no exemplo:
+           <img class="intro__portrait" src="images/lais-silhueta.png" alt=""> -->
+      <div class="container intro__inner">
+        <p class="hello hero-in" style="--i:0" data-i18n="hero.hello">olá, eu sou a Laís</p>
+        <h1 class="intro__title" data-split data-i18n="hero.title">Bem-vindo ao meu universo de design, onde cada pixel tem <span class="highlight">um propósito</span>.</h1>
+        <div class="intro__actions hero-in" style="--i:2">
+          <a class="btn btn--primary" href="#projetos"><span data-i18n="hero.projects">projetos</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-down"/></svg></a>
+          <a class="btn btn--outline" href="assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="hero.cv">ver currículo</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#file"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. Empresas que trabalhei ============ -->
+    <section class="logos" aria-label="Empresas onde trabalhei" data-logos>
+      <p class="overline logos__label" data-i18n="logos.label">empresas e marcas com que já trabalhei</p>
+      <!-- Logos monocromáticos (assets/logos/): a cor vem do token --color-icon-secondary, então ficam claros no tema escuro e escuros no tema claro -->
+      <!-- Uma faixa só, com todas as empresas, passando para a esquerda.
+           Para mudar a velocidade, ajuste --logos-duration em styles/home.css (maior = mais lento). -->
+      <div class="logos__viewport">
+      <div class="logos__track logos__track--left">
+        <div class="logos__group">
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="Zamp" style="-webkit-mask-image: url(assets/logos/zamp.svg); mask-image: url(assets/logos/zamp.svg); --ratio: 234/67; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="Burger King" style="-webkit-mask-image: url(assets/logos/burger-king.png); mask-image: url(assets/logos/burger-king.png); --ratio: 184/200; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="Popeyes" style="-webkit-mask-image: url(assets/logos/popeyes.png); mask-image: url(assets/logos/popeyes.png); --ratio: 780/200; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="Trendx" style="-webkit-mask-image: url(assets/logos/trendx.png); mask-image: url(assets/logos/trendx.png); --ratio: 900/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="Goper" style="-webkit-mask-image: url(assets/logos/goper.png); mask-image: url(assets/logos/goper.png); --ratio: 887/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="Omie" style="-webkit-mask-image: url(assets/logos/omie.png); mask-image: url(assets/logos/omie.png); --ratio: 594/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="TV Globo" style="-webkit-mask-image: url(assets/logos/tv-globo.svg); mask-image: url(assets/logos/tv-globo.svg); --ratio: 96/71; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="ge" style="-webkit-mask-image: url(assets/logos/ge.png); mask-image: url(assets/logos/ge.png); --ratio: 282/200; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="gshow" style="-webkit-mask-image: url(assets/logos/gshow.png); mask-image: url(assets/logos/gshow.png); --ratio: 608/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="Receitas" style="-webkit-mask-image: url(assets/logos/receitas.png); mask-image: url(assets/logos/receitas.png); --ratio: 1200/200; --h: 28px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="O POP" style="-webkit-mask-image: url(assets/logos/opop.png); mask-image: url(assets/logos/opop.png); --ratio: 556/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="MIS" style="-webkit-mask-image: url(assets/logos/mis.png); mask-image: url(assets/logos/mis.png); --ratio: 564/200; --h: 32px"></span></span>
+          <span class="logos__item"><span class="company-logo" role="img" aria-label="BR Media Group" style="-webkit-mask-image: url(assets/logos/br-media.png); mask-image: url(assets/logos/br-media.png); --ratio: 1312/200; --h: 26px"></span></span>
+        </div>
+        <div class="logos__group" aria-hidden="true">
+          <span class="logos__item"><span class="company-logo" data-name="Zamp" style="-webkit-mask-image: url(assets/logos/zamp.svg); mask-image: url(assets/logos/zamp.svg); --ratio: 234/67; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="Burger King" style="-webkit-mask-image: url(assets/logos/burger-king.png); mask-image: url(assets/logos/burger-king.png); --ratio: 184/200; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="Popeyes" style="-webkit-mask-image: url(assets/logos/popeyes.png); mask-image: url(assets/logos/popeyes.png); --ratio: 780/200; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="Trendx" style="-webkit-mask-image: url(assets/logos/trendx.png); mask-image: url(assets/logos/trendx.png); --ratio: 900/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="Goper" style="-webkit-mask-image: url(assets/logos/goper.png); mask-image: url(assets/logos/goper.png); --ratio: 887/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="Omie" style="-webkit-mask-image: url(assets/logos/omie.png); mask-image: url(assets/logos/omie.png); --ratio: 594/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="TV Globo" style="-webkit-mask-image: url(assets/logos/tv-globo.svg); mask-image: url(assets/logos/tv-globo.svg); --ratio: 96/71; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="ge" style="-webkit-mask-image: url(assets/logos/ge.png); mask-image: url(assets/logos/ge.png); --ratio: 282/200; --h: 36px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="gshow" style="-webkit-mask-image: url(assets/logos/gshow.png); mask-image: url(assets/logos/gshow.png); --ratio: 608/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="Receitas" style="-webkit-mask-image: url(assets/logos/receitas.png); mask-image: url(assets/logos/receitas.png); --ratio: 1200/200; --h: 28px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="O POP" style="-webkit-mask-image: url(assets/logos/opop.png); mask-image: url(assets/logos/opop.png); --ratio: 556/200; --h: 34px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="MIS" style="-webkit-mask-image: url(assets/logos/mis.png); mask-image: url(assets/logos/mis.png); --ratio: 564/200; --h: 32px"></span></span>
+          <span class="logos__item"><span class="company-logo" data-name="BR Media Group" style="-webkit-mask-image: url(assets/logos/br-media.png); mask-image: url(assets/logos/br-media.png); --ratio: 1312/200; --h: 26px"></span></span>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. Dobra de descanso: círculo que cresce até ocupar a tela ============ -->
+    <section class="reel" aria-label="Respira" data-reel>
+      <div class="reel__sticky">
+        <div class="reel__media" data-fluid="dark">
+          <!-- Fundo: fumaça roxa que segue o mouse (fluid.js) + estrelas -->
+          <div class="starfield" aria-hidden="true"></div>
+        </div>
+        <div class="container reel__caption">
+          <p class="reel__text" data-i18n="rest.phrase"><span class="highlight">Respira.</span> Bons produtos nascem de boas perguntas.</p>
+          <a class="btn btn--outline reel__btn" href="#projetos"><span data-i18n="rest.cta">ver projetos</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-down"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. Sobre + mini currículo ============ -->
+    <!-- Conteúdo resumido de assets/curriculo-lais-araujo.pdf -->
+    <section class="section" id="sobre">
+      <div class="container about-cv about-cv--center">
+        <div class="about-cv__text reveal">
+          <p class="overline" data-i18n="about.overline">Sobre</p>
+          <h2 class="about-cv__title scrub-text" data-scrub data-i18n="about.title">Experiência em produtos que as pessoas usam todos os dias.</h2>
+          <div class="about-cv__actions">
+            <a class="btn btn--primary" href="assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="about.cv">ver currículo completo</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Linha do tempo: a linha cresce com o scroll e cada experiência entra uma a uma -->
+        <ol class="cv cv--timeline cv--center" aria-label="Experiência profissional" data-timeline>
+          <li class="cv__item">
+            <p class="cv__company">Globo/ACT · GloboPop</p>
+            <h3 class="cv__role">UX Designer Senior</h3>
+            <p class="cv__period" data-i18n="cv.globopop.per">01/2026 · atual</p>
+            <p class="cv__desc" data-i18n="cv.globopop.desc">Lançamento do GloboPop: Comunidades (UGC), username do onboarding ao perfil e um plugin de Figma que automatiza o handoff.</p>
+          </li>
+          <li class="cv__item">
+            <p class="cv__company">Globo/ACT · ge</p>
+            <h3 class="cv__role">UX Designer Senior</h3>
+            <p class="cv__period">08/2025 · 12/2025</p>
+            <p class="cv__desc" data-i18n="cv.ge.desc">IA nas transmissões ao vivo: insights do “Você Sabia?” e resumo das partidas em tempo real para reter quem assiste.</p>
+          </li>
+          <li class="cv__item">
+            <p class="cv__company">BR Media · App MIS</p>
+            <h3 class="cv__role" data-i18n="cv.mis.role">Product Designer Sênior</h3>
+            <p class="cv__period" data-i18n="cv.mis.per">08/2024 · 12/2024<br>04/2026 · 09/2026</p>
+            <p class="cv__desc" data-i18n="cv.mis.desc">Comunidades de creators no app MIS e gestão para marcas no SIC — já em uso por Pantene, Dove e Cetaphil.</p>
+          </li>
+          <li class="cv__item">
+            <p class="cv__company">Omie · SaaS</p>
+            <h3 class="cv__role" data-i18n="cv.omie.role">UX Designer Analyst Sênior</h3>
+            <p class="cv__period">01/2025 · 08/2025</p>
+            <p class="cv__desc" data-i18n="cv.omie.desc">UX e CRO em Growth: design system que cortou 40% do SLA de landing pages e cadastro com +100 agendamentos.</p>
+          </li>
+          <li class="cv__item">
+            <p class="cv__company" data-i18n="cv.zamp.co">Zamp · Burger King e Popeyes</p>
+            <h3 class="cv__role">UX/UI Designer</h3>
+            <p class="cv__period">02/2022 · 08/2024</p>
+            <p class="cv__desc" data-i18n="cv.zamp.desc">Totens de autoatendimento: +28% em vendas, +9,1% no ticket médio e +15 p.p. no NPS transacional.</p>
+          </li>
+          <li class="cv__item">
+            <p class="cv__company">Trendx · Goper</p>
+            <h3 class="cv__role">Product Designer</h3>
+            <p class="cv__period">01/2019 · 01/2022</p>
+            <p class="cv__desc" data-i18n="cv.goper.desc">Criei a área de design do zero: processos de UX/UI, pesquisa com usuários, identidade visual e design system.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 5. Projetos em destaque ============ -->
+    <section class="section section--projects" id="projetos">
+      <!-- No computador a seção fica parada e os projetos andam para o lado com o scroll; no celular, deslizam com o dedo -->
+      <div class="hscroll" data-hscroll>
+        <div class="hscroll__sticky">
+        <div class="container hscroll__head">
+          <header class="section-header reveal">
+            <p class="overline" data-i18n="projects.overline">Projetos</p>
+            <h2 class="h2" data-i18n="projects.title">Projetos em destaque</h2>
+          </header>
+          <div class="hscroll__meta" aria-hidden="true"><span data-hscroll-count>01</span> / <span data-hscroll-total>03</span></div>
+        </div>
+        <div class="projects hscroll__track" data-hscroll-track>
+          <!-- Cards sem imagem: logo da empresa (assets/logos/), título e tags. --h ajusta o tamanho de cada logo -->
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <span class="project-card__logo" role="img" aria-label="Burger King"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/burger-king.png); mask-image: url(assets/logos/burger-king.png); --ratio: 184/200; --h: 40px"></span></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+              </div>
+              <h3 class="project-card__title"><a class="project-card__link" href="projetos/burger-king-totem.html" data-i18n="card.bk.title">Um novo cardápio para o totem</a></h3>
+              <div class="project-card__foot">
+                <ul class="tag-list"><li class="tag tag--brand" data-i18n="card.bk.tag0">Autoatendimento</li><li class="tag tag--outline" data-i18n="card.bk.tag1">Pesquisa</li><li class="tag tag--outline" data-i18n="card.bk.tag2">Varejo</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <span class="project-card__logo" role="img" aria-label="BR Media"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/br-media.png); mask-image: url(assets/logos/br-media.png); --ratio: 1312/200; --h: 14px"></span></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+              </div>
+              <h3 class="project-card__title"><a class="project-card__link" href="projetos/mis-comunidades.html" data-i18n="card.mis.title">Comunidades MIS</a></h3>
+              <div class="project-card__foot">
+                <ul class="tag-list"><li class="tag tag--accent" data-i18n="card.mis.tag0">Creator economy</li><li class="tag tag--outline" data-i18n="card.mis.tag1">Mobile + Web</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <span class="project-card__logo" role="img" aria-label="GloboPop"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/opop.png); mask-image: url(assets/logos/opop.png); --ratio: 556/200; --h: 24px"></span></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+              </div>
+              <h3 class="project-card__title"><a class="project-card__link" href="projetos/globopop-feed-anonimo.html" data-i18n="card.feed.title">Feed de degustação anônimo</a></h3>
+              <div class="project-card__foot">
+                <ul class="tag-list"><li class="tag tag--brand" data-i18n="card.feed.tag0">Growth</li><li class="tag tag--outline" data-i18n="card.feed.tag1">Teste A/B</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <span class="project-card__logo" role="img" aria-label="ge"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/ge.png); mask-image: url(assets/logos/ge.png); --ratio: 282/200; --h: 30px"></span></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+              </div>
+              <h3 class="project-card__title"><a class="project-card__link" href="projetos/ge-card-de-atleta.html" data-i18n="card.ge.title">Card de atleta & Você sabia?</a></h3>
+              <div class="project-card__foot">
+                <ul class="tag-list"><li class="tag tag--accent" data-i18n="card.ge.tag0">Dados & IA</li><li class="tag tag--outline" data-i18n="card.ge.tag1">Esporte</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <span class="project-card__logo" role="img" aria-label="GloboPop"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/opop.png); mask-image: url(assets/logos/opop.png); --ratio: 556/200; --h: 24px"></span></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+              </div>
+              <h3 class="project-card__title"><a class="project-card__link" href="projetos/globopop-novelinhas.html" data-i18n="card.novelinhas.title">Microdramas & Novelinhas</a></h3>
+              <div class="project-card__foot">
+                <ul class="tag-list"><li class="tag tag--brand" data-i18n="card.novelinhas.tag0">Retenção</li><li class="tag tag--outline" data-i18n="card.novelinhas.tag1">Vídeo vertical</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__inner">
+              <div class="project-card__top">
+                <span class="project-card__logo" role="img" aria-label="Goper"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/goper.png); mask-image: url(assets/logos/goper.png); --ratio: 887/200; --h: 18px"></span></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+              </div>
+              <h3 class="project-card__title"><a class="project-card__link" href="projetos/goper.html" data-i18n="card.goper.title">A academia que cabe na rotina</a></h3>
+              <div class="project-card__foot">
+                <ul class="tag-list"><li class="tag tag--accent" data-i18n="card.goper.tag0">Fitness</li><li class="tag tag--outline" data-i18n="card.goper.tag1">Produto 0→1</li><li class="tag tag--outline" data-i18n="card.goper.tag2">Branding</li></ul>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- linha que acompanha o scroll dos projetos -->
+        <div class="container hscroll__progress" aria-hidden="true"><span class="hscroll__line"><span data-hscroll-bar></span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. Meu processo de design ============ -->
+    <section class="section" id="processo">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="overline" data-i18n="process.overline">Como eu trabalho</p>
+          <h2 class="h2" data-i18n="process.heading">Meu processo de design</h2>
+        </header>
+        <ol class="process process--stack">
+          <li class="process__step reveal">
+            <div class="process__text">
+              <h3 data-i18n="process.1.title">Entender o problema</h3>
+              <p data-i18n="process.1.text">Começo alinhando com produto, engenharia e negócio o que precisa mudar e como vamos saber se deu certo. Antes de abrir o Figma, reviso dados, pesquisas anteriores e restrições técnicas.</p>
+            </div>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text">
+              <h3 data-i18n="process.2.title">Pesquisar e explorar</h3>
+              <p data-i18n="process.2.text">Converso com usuários e stakeholders, faço benchmarking e mapeio os fluxos para ver o problema por inteiro. A ideia é chegar com opções bem embasadas, e não com uma única resposta.</p>
+            </div>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text">
+              <h3 data-i18n="process.3.title">Desenhar e validar</h3>
+              <p data-i18n="process.3.text">Passo de wireframes para protótipos de alta fidelidade no design system, escrevendo o texto da interface junto com o layout. Testo com usuários e itero com o time antes de fechar a solução.</p>
+            </div>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text">
+              <h3 data-i18n="process.4.title">Entregar e acompanhar</h3>
+              <p data-i18n="process.4.text">Documento estados, regras e casos de borda para um handoff sem ruído. Depois sigo a implementação e os resultados para decidir os próximos passos.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 7. Prova social + números ============ -->
+    <section class="section testi" id="feedbacks">
+      <div class="container testi__layout">
+        <div class="testi__intro">
+        <header class="testi__head reveal">
+          <div>
+            <p class="overline" data-i18n="testi.overline">Feedbacks</p>
+            <h2 class="testi__title" data-i18n="testi.title">O que dizem sobre o meu trabalho</h2>
+          </div>
+          <p class="testi__sub" data-i18n="testi.sub">Líderes e colegas, nas próprias palavras, sobre o que mudou depois que trabalhamos juntos.</p>
+        </header>
+
+        <div class="numbers testi__numbers reveal">
+          <div class="number"><span class="number__value" data-count>+9</span><span class="number__label" data-i18n="num.years">anos de experiência</span></div>
+          <div class="number"><span class="number__value" data-count>6</span><span class="number__label" data-i18n="num.sectors">setores de atuação</span></div>
+          <div class="number"><span class="number__value" data-count>+15</span><span class="number__label" data-i18n="num.products">produtos digitais</span></div>
+        </div>
+        </div>
+
+        <!-- Carrossel de depoimentos: troca sozinho, pausa com o mouse em cima, setas e tracinhos para navegar.
+             Para adicionar um depoimento: duplique um <figure class="testi__slide"> e um botão em .testi__dots -->
+        <div class="testi__slider reveal" data-testimonials aria-roledescription="carrossel" aria-label="Depoimentos">
+          <div class="testi__content">
+            <div class="testi__top">
+              <span class="testi__mark" aria-hidden="true">“</span>
+              <span class="testi__badge" data-i18n="testi.badge">Zamp · Burger King e Popeyes</span>
+            </div>
+            <div class="testi__slides" aria-live="polite">
+            <figure class="testi__slide is-active" id="depoimento-1" aria-roledescription="slide" aria-label="1 de 3">
+              <blockquote class="testi__quote">“Ela liderou e executou todo o redesign dos nossos totens de autoatendimento do Burger King. […] Como resultado, tivemos uma jornada de compra mais fluida e benéfica para o nosso negócio, uma vez que aumentamos em 6 p.p. a adesão de sugestões já na primeira semana de implementação das novas telas.”</blockquote>
+              <figcaption class="testi__author">
+                <span class="testi__avatar testi__avatar--l" aria-hidden="true">FR</span>
+                <span><span class="testi__name">Flávia Rocha</span><span class="testi__role" data-i18n="testi.role1">Product Manager · Zamp (Burger King e Popeyes)</span></span>
+              </figcaption>
+            </figure>
+            <figure class="testi__slide" id="depoimento-2" aria-roledescription="slide" aria-label="2 de 3" aria-hidden="true">
+              <blockquote class="testi__quote">“Ela se destacou em responder de forma ágil aos achados de pesquisa, […] resultando em ótimos fluxos e interfaces intuitivas.”</blockquote>
+              <figcaption class="testi__author">
+                <span class="testi__avatar testi__avatar--l" aria-hidden="true">AB</span>
+                <span><span class="testi__name">Adriano Barros</span><span class="testi__role" data-i18n="testi.role2">Coordenador de UX · Zamp</span></span>
+              </figcaption>
+            </figure>
+            <figure class="testi__slide" id="depoimento-3" aria-roledescription="slide" aria-label="3 de 3" aria-hidden="true">
+              <blockquote class="testi__quote">“Sua proatividade em padronização junto ao nosso Design System e habilidade em comunicar para o time e demais stakeholders […] são parte de um caminho de sucesso.”</blockquote>
+              <figcaption class="testi__author">
+                <span class="testi__avatar testi__avatar--l" aria-hidden="true">MR</span>
+                <span><span class="testi__name">Marcos Razuk</span><span class="testi__role" data-i18n="testi.role3">Líder de Visual Design · Zamp</span></span>
+              </figcaption>
+            </figure>
+            </div>
+            <div class="testi__controls">
+              <div class="testi__dots"><button type="button" class="testi__dot is-active" aria-label="Depoimento 1" aria-controls="depoimento-1" aria-current="true"><span></span></button><button type="button" class="testi__dot" aria-label="Depoimento 2" aria-controls="depoimento-2"><span></span></button><button type="button" class="testi__dot" aria-label="Depoimento 3" aria-controls="depoimento-3"><span></span></button></div>
+              <div class="testi__arrows">
+                <button type="button" class="icon-btn testi__prev" aria-label="Depoimento anterior"><svg class="icon" aria-hidden="true" style="rotate:180deg"><use href="assets/icons.svg#arrow-right"/></svg></button>
+                <button type="button" class="icon-btn testi__next" aria-label="Próximo depoimento"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. Galeria de fotos pessoais ============ -->
+    <!-- Fotos em images/galeria/. Para adicionar: copie a foto (formato 4:5) para lá e duplique um <li class="arc__item"> e um botão em .arc__dots -->
+    <section class="section gallery" id="galeria" aria-label="Fotos pessoais">
+      <div class="container">
+        <header class="section-header section-header--center reveal">
+          <p class="overline" data-i18n="gallery.overline">Por trás das telas</p>
+          <h2 class="h2" data-i18n="gallery.title">Um pouco de mim fora do Figma</h2>
+        </header>
+      </div>
+      <div class="arc" data-arc aria-roledescription="carrossel" aria-label="Galeria de fotos">
+        <ul class="arc__stage">
+          <li class="arc__item"><img src="images/galeria/foto-01.webp" alt="Laís mostrando o app do Goper ao lado da bike" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-02.webp" alt="Laís sentada na escada da Zamp" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-03.webp" alt="Logo da Globo no escritório" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-04.webp" alt="Laís no estúdio do GloboPop" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-05.webp" alt="Time do GloboPop" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-06.webp" alt="Laís com o time de uma loja Popeyes" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-07.webp" alt="Laís diante dos totens do Burger King" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-08.webp" alt="Time da Omie na convenção de vendas" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-09.webp" alt="Laís no elevador na convenção da Omie" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-10.webp" alt="Letreiro da Omie na convenção de vendas 2025" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-11.webp" alt="Laís no estande da Trendx numa feira" loading="lazy" draggable="false"></li>
+          <li class="arc__item"><img src="images/galeria/foto-12.webp" alt="Time da Trendx no estande da feira" loading="lazy" draggable="false"></li>
+        </ul>
+        <div class="arc__controls">
+          <button type="button" class="icon-btn arc__prev" aria-label="Foto anterior"><svg class="icon" aria-hidden="true" style="rotate:180deg"><use href="assets/icons.svg#arrow-right"/></svg></button>
+          <div class="arc__dots"><button type="button" class="arc__dot" aria-label="Foto 1"></button><button type="button" class="arc__dot" aria-label="Foto 2"></button><button type="button" class="arc__dot" aria-label="Foto 3"></button><button type="button" class="arc__dot" aria-label="Foto 4"></button><button type="button" class="arc__dot" aria-label="Foto 5"></button><button type="button" class="arc__dot" aria-label="Foto 6"></button><button type="button" class="arc__dot" aria-label="Foto 7"></button><button type="button" class="arc__dot" aria-label="Foto 8"></button><button type="button" class="arc__dot" aria-label="Foto 9"></button><button type="button" class="arc__dot" aria-label="Foto 10"></button><button type="button" class="arc__dot" aria-label="Foto 11"></button><button type="button" class="arc__dot" aria-label="Foto 12"></button></div>
+          <button type="button" class="icon-btn arc__next" aria-label="Próxima foto"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9. Última chamada para contato + frase ============ -->
+    <section class="final-cta" id="contato">
+      <div class="starfield" aria-hidden="true"></div>
+      <div class="container final-cta__inner">
+        <div class="cta-card reveal">
+          <div class="cta-card__text">
+            <p class="overline" data-i18n="cta.overline">Contato</p>
+            <h2 class="cta-card__title" data-i18n="cta.title">E aí, bora trabalhar juntos?</h2>
+            <p data-i18n="cta.text">Menos formalidade, mais conversa. Vamos marcar um papo sobre o seu produto ou a sua vaga.</p>
+          </div>
+          <a class="btn btn--accent btn--l cta-card__btn" href="https://wa.me/5511966239797?text=Ol%C3%A1%20La%C3%ADs%2C%20vi%20seu%20portf%C3%B3lio!" target="_blank" rel="noopener"><span data-i18n="cta.btn">abrir WhatsApp</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chat"/></svg></a>
+        </div>
+        <p class="closing__phrase final-cta__phrase scrub-text" data-scrub data-i18n="cta.phrase">Design é sobre pessoas.<br> <span class="highlight">Cada pixel</span> tem um<br> <span class="brand">propósito</span>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 10. Footer ============ -->
+  <footer class="site-foot">
+    <div class="starfield" aria-hidden="true"></div>
+    <div class="container site-foot__inner">
+      <img class="site-foot__logo" src="assets/logo-lockup.svg" alt="olaís design" width="160" height="90">
+      <ul class="social">
+        <li><a class="link" href="https://www.linkedin.com/in/laisaaraujo/" target="_blank" rel="noopener">LinkedIn <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a></li>
+        <li><a class="link" href="mailto:olais.design@gmail.com">E-mail <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a></li>
+        <li><a class="link" href="assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="foot.cv">Currículo</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a></li>
+      </ul>
+      <p class="caption text-tertiary">© <span data-year>2026</span> Laís Araujo · <span data-i18n="foot.note">feito com amor pela própria designer dona deste portfólio</span></p>
+    </div>
+  </footer>
+
+  <script src="i18n.js?v=48" defer></script>
+  <script src="logo-intro.js?v=48" defer></script>
+  <script src="scripts.js?v=48" defer></script>
+  <script src="fluid.js?v=48" defer></script>
+  <script src="nebula.js?v=48" defer></script>
 </body>
 </html>
