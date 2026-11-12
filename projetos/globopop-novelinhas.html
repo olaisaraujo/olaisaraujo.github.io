@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-BR" data-title-en="GloboPop · Microdramas &amp; Soaps — Laís Araujo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GloboPop · Microdramas & Novelinhas — Laís Araujo</title>
+  <meta name="description" content="Estudo de caso: Novelinhas &amp; Microdramas: dar ordem, memória e continuidade às séries verticais do GloboPop.">
+  <meta name="theme-color" content="#0D0D0D">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Unbounded:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/tokens.css?v=41">
+  <link rel="stylesheet" href="../styles/main.css?v=41">
+  <link rel="stylesheet" href="../styles/motion.css?v=41">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;if(localStorage.getItem('lang')==='en')document.documentElement.classList.add('lang-en')}catch(e){}</script>
+</head>
+<body>
+  <a class="skip-link btn btn--primary" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" aria-label="olaís — início"><span class="logo" aria-hidden="true"></span></a>
+      <nav class="site-nav" aria-label="Principal">
+        <a href="../index.html#sobre" data-i18n="nav.about">sobre</a>
+        <a href="../index.html#projetos" aria-current="page" data-i18n="nav.projects">projetos</a>
+        <a href="../index.html#feedbacks" data-i18n="nav.feedbacks">feedbacks</a>
+        <a href="../index.html#contato" data-i18n="nav.contact">contato</a>
+      </nav>
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR" aria-label="Português">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+        </div>
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="../assets/icons.svg#moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="../assets/icons.svg#sun"/></svg>
+        </button>
+        <a class="btn btn--primary" href="https://wa.me/5511966239797" target="_blank" rel="noopener">WhatsApp <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#chat"/></svg></a>
+      </div>
+    </div>
+  </header>
+  <nav class="menu-toggle" aria-label="Atalhos">
+    <a href="../index.html#projetos" class="is-active"><span data-i18n="nav.projects">projetos</span> <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up-right"/></svg></a>
+    <a href="../index.html#contato" data-i18n="nav.talk">fale comigo</a>
+  </nav>
+  <main id="conteudo">
+    <div data-lang-block="pt">
+      <div class="container">
+        <header class="case-hero">
+          <a class="link case-hero__back" href="../index.html#projetos"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-right"/></svg> todos os projetos</a>
+          <p class="overline">Globo · GloboPop</p>
+          <ul class="tag-list"><li class="tag tag--brand">Retenção</li><li class="tag tag--outline">Dados</li><li class="tag tag--outline">Vídeo vertical</li></ul>
+          <h1 class="case-title">Agora ninguém mais perde o próximo capítulo</h1>
+          <p class="body-l text-secondary" style="max-width: 760px">Novelinhas & Microdramas: dar ordem, memória e continuidade às séries verticais do GloboPop.</p>
+          <dl class="case-meta">
+            <div><dt>Empresa</dt><dd>Globo · GloboPop (via ACT)</dd></div>
+            <div><dt>Meu papel</dt><dd>UX Designer Sênior</dd></div>
+            <div><dt>Período</dt><dd>2026</dd></div>
+            <div><dt>Status</dt><dd>Em implementação</dd></div>
+          </dl>
+        </header>
+        <figure class="case-cover-figure">
+          <img class="case-shot" src="../images/projetos/novelinhas-feed.jpg" alt="Feed da novelinha: próximo episódio, navegação e autoplay.">
+          <figcaption>Feed da novelinha: próximo episódio, navegação e autoplay. <span class="text-tertiary">Imagem provisória do deck no Figma.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="container case-body">
+        <ul class="case-toc" aria-label="Neste estudo de caso">
+          <li><a href="#contexto">Contexto</a></li>
+          <li><a href="#problema">Problema</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#solucao">Solução</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#aprendizados">Aprendizados</a></li>
+        </ul>
+
+        <div class="case-content">
+          <section class="case-section reveal" id="contexto">
+            <p class="overline">01 · Contexto</p>
+            <h2 class="h2">Séries vivendo num feed de vídeos soltos</h2>
+            <p>O GloboPop é o app de vídeos curtos da Globo. As novelinhas são séries em vídeo vertical, com tudo que “série” exige: ordem, memória e continuidade. Mas elas nasciam dentro de um feed feito para vídeos soltos.</p>
+            <p><strong>Meu papel:</strong> conduzi o projeto de ponta a ponta: análise de dados, benchmark, princípios, ideação, telas, cenários com o Globoplay e handoff.</p>
+          </section>
+
+          <section class="case-section reveal" id="problema">
+            <p class="overline">02 · Problema</p>
+            <h2 class="h2">Ninguém está assistindo na ordem</h2>
+            <p>O capítulo mais visto era o mais recente publicado, não o próximo da história: o ep. 2 ficava com 1% das views e o ep. 7 com 33%.</p>
+            <div class="metrics">
+            <div class="metric"><span class="metric__value">64%</span><span class="metric__label">de quem volta 4+ dias por semana assiste novelinha</span></div>
+            <div class="metric metric--brand"><span class="metric__value">+154%</span><span class="metric__label">mais tempo de vídeo por dia que os demais usuários</span></div>
+          </div>
+            <div class="callout"><strong>Hipótese:</strong> se o produto reconhecer a novelinha como série, mostrando onde o usuário parou, qual é o próximo capítulo e quanto falta, ele acompanha até o fim e volta mais vezes.</div>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/novelinhas-problema.jpg" alt="Retenção por capítulo: a curva estava invertida." loading="lazy"><figcaption>Retenção por capítulo: a curva estava invertida.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="processo">
+            <p class="overline">03 · Processo</p>
+            <h2 class="h2">Parti do dado, não da ideia</h2>
+            <ul>
+            <li>Dados do Horizon: retenção por capítulo e recorrência</li>
+            <li>Voz do usuário: avaliações nas lojas e comentários no app, que pediam novelinha</li>
+            <li>Benchmark: TikTok, YouTube, Netflix, PineDrama, Discord e Globoplay</li>
+            <li>Princípios de comportamento: histórias incompletas nos puxam de volta (efeito Zeigarnik) e ver o progresso acelera o fim</li>
+            <li>Ideação em dois cenários (GloboPop e Globoplay), telas, documentação e handoff</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="solucao">
+            <p class="overline">04 · Solução</p>
+            <h2 class="h2">Cinco pontos de contato</h2>
+            <p>A solução não é uma tela nova. É fazer a novelinha se comportar como série em cada lugar onde ela aparece.</p>
+            <ul>
+            <li><strong>Consumo:</strong> CTA “Acompanhar novelinha” e identificação do episódio sempre à vista.</li>
+            <li><strong>Feed da novelinha:</strong> próximo episódio, navegação entre episódios e autoplay.</li>
+            <li><strong>Palco:</strong> thumbs numeradas, status de assistido e botão Continuar.</li>
+            <li><strong>Notificação:</strong> aviso de episódio novo para não perder o timing da história.</li>
+            <li><strong>Busca:</strong> área dedicada à descoberta de novelinhas.</li>
+            <li><strong>Ponte com o Globoplay:</strong> quando a história continua lá, o produto avisa antes, durante e depois do consumo.</li>
+          </ul>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/novelinhas-palco.jpg" alt="Palco: thumbs numeradas, último assistido e botão Continuar." loading="lazy"><figcaption>Palco: thumbs numeradas, último assistido e botão Continuar.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="resultados">
+            <p class="overline">05 · Resultados</p>
+            <h2 class="h2">Status e como medir</h2>
+            <p>A proposta está sendo implementada no GloboPop. Ainda não há dados pós-lançamento, então estes são os indicadores que vou acompanhar:</p>
+            <ul>
+            <li>Retenção por capítulo: o ep. 2 sair de 1% e a curva voltar a ser decrescente</li>
+            <li>Conclusão: % de usuários que chegam ao último episódio</li>
+            <li>Recorrência: dias por semana de quem acompanha novelinha</li>
+            <li>Ponte: cliques no touchpoint do Globoplay</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="aprendizados">
+            <p class="overline">06 · Aprendizados</p>
+            <h2 class="h2">O que levo deste projeto</h2>
+            <ul>
+            <li><strong>O dado muda a pergunta.</strong> Sem o Horizon, eu teria desenhado um feed mais bonito. Com ele, o problema virou ordem e continuidade.</li>
+            <li><strong>Modelo mental vence novidade.</strong> O usuário espera que uma série funcione como nas plataformas que já usa.</li>
+            <li><strong>Dois apps, uma jornada.</strong> O touchpoint do Globoplay exigiu pensar onde a história termina para o usuário, não onde termina o app.</li>
+          </ul>
+          </section>
+
+          <a class="next-case" href="goper.html">
+            <div><p class="overline">Próximo projeto</p><p class="h3">Goper · A academia que cabe na rotina</p></div>
+            <span class="icon-btn icon-btn--brand" aria-hidden="true"><svg class="icon"><use href="../assets/icons.svg#arrow-right"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div data-lang-block="en" lang="en" hidden>
+      <div class="container">
+        <header class="case-hero">
+          <a class="link case-hero__back" href="../index.html#projetos"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-right"/></svg> all projects</a>
+          <p class="overline">Globo · GloboPop</p>
+          <ul class="tag-list"><li class="tag tag--brand">Retention</li><li class="tag tag--outline">Data</li><li class="tag tag--outline">Vertical video</li></ul>
+          <h1 class="case-title">Now nobody misses the next episode</h1>
+          <p class="body-l text-secondary" style="max-width: 760px">Microdramas & Soaps: bringing order, memory and continuity to GloboPop’s vertical series.</p>
+          <dl class="case-meta">
+            <div><dt>Company</dt><dd>Globo · GloboPop (via ACT)</dd></div>
+            <div><dt>My role</dt><dd>Senior UX Designer</dd></div>
+            <div><dt>Period</dt><dd>2026</dd></div>
+            <div><dt>Status</dt><dd>In implementation</dd></div>
+          </dl>
+        </header>
+        <figure class="case-cover-figure">
+          <img class="case-shot" src="../images/projetos/novelinhas-feed.jpg" alt="Series feed: next episode, navigation and autoplay.">
+          <figcaption>Series feed: next episode, navigation and autoplay. <span class="text-tertiary">Provisional image from the Figma deck.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="container case-body">
+        <ul class="case-toc" aria-label="In this case study">
+          <li><a href="#contexto-en">Context</a></li>
+          <li><a href="#problema-en">Problem</a></li>
+          <li><a href="#processo-en">Process</a></li>
+          <li><a href="#solucao-en">Solution</a></li>
+          <li><a href="#resultados-en">Results</a></li>
+          <li><a href="#aprendizados-en">Learnings</a></li>
+        </ul>
+
+        <div class="case-content">
+          <section class="case-section reveal" id="contexto-en">
+            <p class="overline">01 · Context</p>
+            <h2 class="h2">Series living in a feed of loose videos</h2>
+            <p>GloboPop is Globo’s short-video app. The “novelinhas” are vertical video series, with everything a series needs: order, memory and continuity. But they lived inside a feed built for loose videos.</p>
+            <p><strong>My role:</strong> I led the project end to end: data analysis, benchmark, principles, ideation, screens, scenarios with Globoplay and handoff.</p>
+          </section>
+
+          <section class="case-section reveal" id="problema-en">
+            <p class="overline">02 · Problem</p>
+            <h2 class="h2">Nobody is watching in order</h2>
+            <p>The most-watched episode was the latest published, not the next one in the story: ep. 2 had 1% of views and ep. 7 had 33%.</p>
+            <div class="metrics">
+            <div class="metric"><span class="metric__value">64%</span><span class="metric__label">of people who return 4+ days a week watch these series</span></div>
+            <div class="metric metric--brand"><span class="metric__value">+154%</span><span class="metric__label">more video time per day than other users</span></div>
+          </div>
+            <div class="callout"><strong>Hypothesis:</strong> if the product recognizes the series as a series, showing where the user stopped, what the next episode is and how much is left, they’ll follow it to the end and come back more often.</div>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/novelinhas-problema.jpg" alt="Retention by episode: the curve was inverted." loading="lazy"><figcaption>Retention by episode: the curve was inverted.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="processo-en">
+            <p class="overline">03 · Process</p>
+            <h2 class="h2">I started from data, not from an idea</h2>
+            <ul>
+            <li>Horizon data: retention by episode and recurrence</li>
+            <li>Voice of the user: store reviews and in-app comments, which asked for these series</li>
+            <li>Benchmark: TikTok, YouTube, Netflix, PineDrama, Discord and Globoplay</li>
+            <li>Behavioral principles: unfinished stories pull us back (Zeigarnik effect) and seeing progress speeds up completion</li>
+            <li>Ideation in two scenarios (GloboPop and Globoplay), screens, documentation and handoff</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="solucao-en">
+            <p class="overline">04 · Solution</p>
+            <h2 class="h2">Five touchpoints</h2>
+            <p>The solution isn’t a new screen. It’s making the series behave like a series everywhere it appears.</p>
+            <ul>
+            <li><strong>Playback:</strong> a “Follow series” CTA and the episode always identified.</li>
+            <li><strong>Series feed:</strong> next episode, navigation between episodes and autoplay.</li>
+            <li><strong>Stage page:</strong> numbered thumbnails, watched status and a Continue button.</li>
+            <li><strong>Notification:</strong> a new-episode alert so you don’t miss the story’s timing.</li>
+            <li><strong>Search:</strong> a dedicated area to discover series.</li>
+            <li><strong>Bridge to Globoplay:</strong> when the story continues there, the product says so before, during and after watching.</li>
+          </ul>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/novelinhas-palco.jpg" alt="Stage page: numbered thumbnails, last watched and a Continue button." loading="lazy"><figcaption>Stage page: numbered thumbnails, last watched and a Continue button.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="resultados-en">
+            <p class="overline">05 · Results</p>
+            <h2 class="h2">Status and how to measure</h2>
+            <p>The proposal is being implemented in GloboPop. There’s no post-launch data yet, so these are the indicators I’ll track:</p>
+            <ul>
+            <li>Retention by episode: ep. 2 rising from 1% and the curve going back to decreasing</li>
+            <li>Completion: % of users who reach the last episode</li>
+            <li>Recurrence: days per week for people following a series</li>
+            <li>Bridge: clicks on the Globoplay touchpoint</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="aprendizados-en">
+            <p class="overline">06 · Learnings</p>
+            <h2 class="h2">What I take from this project</h2>
+            <ul>
+            <li><strong>Data changes the question.</strong> Without Horizon, I would have designed a prettier feed. With it, the problem became order and continuity.</li>
+            <li><strong>Mental model beats novelty.</strong> Users expect a series to work like it does on the platforms they already use.</li>
+            <li><strong>Two apps, one journey.</strong> The Globoplay touchpoint required thinking about where the story ends for the user, not where the app ends.</li>
+          </ul>
+          </section>
+
+          <a class="next-case" href="goper.html">
+            <div><p class="overline">Next project</p><p class="h3">Goper · The gym that fits your routine</p></div>
+            <span class="icon-btn icon-btn--brand" aria-hidden="true"><svg class="icon"><use href="../assets/icons.svg#arrow-right"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cta">
+        <p class="overline" data-i18n="case.foot.overline">Contato</p>
+        <p class="display-l" data-i18n="case.foot.title">Vamos criar algo juntos?</p>
+        <a class="contact__email" href="mailto:olais.design@gmail.com">olais.design@gmail.com</a>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="caption text-tertiary">© <span data-year>2026</span> Laís Araujo · São Paulo, SP</p>
+        <ul class="social">
+          <li><a class="link" href="https://www.linkedin.com/in/laisaaraujo/" target="_blank" rel="noopener">LinkedIn <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up-right"/></svg></a></li>
+          <li><a class="link" href="../assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="foot.cv">Currículo</span> <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up-right"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../i18n.js?v=41" defer></script>
+  <script src="../scripts.js?v=41" defer></script>
+  <script src="../fluid.js?v=41" defer></script>
+</body>
+</html>

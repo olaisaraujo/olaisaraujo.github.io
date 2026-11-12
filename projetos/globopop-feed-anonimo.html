@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR" data-title-en="GloboPop · Anonymous feed — Laís Araujo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GloboPop · Feed anônimo — Laís Araujo</title>
+  <meta name="description" content="Estudo de caso: Um feed que deixa a pessoa assistir sem login e convida para o cadastro no momento certo, em vez de bloquear a entrada.">
+  <meta name="theme-color" content="#0D0D0D">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Unbounded:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/tokens.css?v=41">
+  <link rel="stylesheet" href="../styles/main.css?v=41">
+  <link rel="stylesheet" href="../styles/motion.css?v=41">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;if(localStorage.getItem('lang')==='en')document.documentElement.classList.add('lang-en')}catch(e){}</script>
+</head>
+<body>
+  <a class="skip-link btn btn--primary" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" aria-label="olaís — início"><span class="logo" aria-hidden="true"></span></a>
+      <nav class="site-nav" aria-label="Principal">
+        <a href="../index.html#sobre" data-i18n="nav.about">sobre</a>
+        <a href="../index.html#projetos" aria-current="page" data-i18n="nav.projects">projetos</a>
+        <a href="../index.html#feedbacks" data-i18n="nav.feedbacks">feedbacks</a>
+        <a href="../index.html#contato" data-i18n="nav.contact">contato</a>
+      </nav>
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR" aria-label="Português">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+        </div>
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="../assets/icons.svg#moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="../assets/icons.svg#sun"/></svg>
+        </button>
+        <a class="btn btn--primary" href="https://wa.me/5511966239797" target="_blank" rel="noopener">WhatsApp <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#chat"/></svg></a>
+      </div>
+    </div>
+  </header>
+  <nav class="menu-toggle" aria-label="Atalhos">
+    <a href="../index.html#projetos" class="is-active"><span data-i18n="nav.projects">projetos</span> <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up-right"/></svg></a>
+    <a href="../index.html#contato" data-i18n="nav.talk">fale comigo</a>
+  </nav>
+  <main id="conteudo">
+    <div data-lang-block="pt">
+      <div class="container">
+        <header class="case-hero">
+          <a class="link case-hero__back" href="../index.html#projetos"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-right"/></svg> todos os projetos</a>
+          <p class="overline">Globo · GloboPop</p>
+          <ul class="tag-list"><li class="tag tag--brand">Growth</li><li class="tag tag--outline">Pesquisa</li><li class="tag tag--outline">Teste A/B</li></ul>
+          <h1 class="case-title">Feed de degustação anônimo</h1>
+          <p class="body-l text-secondary" style="max-width: 760px">Um feed que deixa a pessoa assistir sem login e convida para o cadastro no momento certo, em vez de bloquear a entrada.</p>
+          <dl class="case-meta">
+            <div><dt>Empresa</dt><dd>Globo · GloboPop (via ACT)</dd></div>
+            <div><dt>Meu papel</dt><dd>UX Designer Sênior</dd></div>
+            <div><dt>Período</dt><dd>2026</dd></div>
+            <div><dt>Status</dt><dd>Em implementação</dd></div>
+          </dl>
+        </header>
+        <figure class="case-cover-figure">
+          <img class="case-shot" src="../images/projetos/feed-sessao.jpg" alt="Uma sessão anônima: até 12 vídeos, com convite a cada 3.">
+          <figcaption>Uma sessão anônima: até 12 vídeos, com convite a cada 3. <span class="text-tertiary">Imagem provisória do deck no Figma.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="container case-body">
+        <ul class="case-toc" aria-label="Neste estudo de caso">
+          <li><a href="#contexto">Contexto</a></li>
+          <li><a href="#problema">Problema</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#solucao">Solução</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#aprendizados">Aprendizados</a></li>
+        </ul>
+
+        <div class="case-content">
+          <section class="case-section reveal" id="contexto">
+            <p class="overline">01 · Contexto</p>
+            <h2 class="h2">Pedir login antes de mostrar valor</h2>
+            <p>O GloboPop é o app de vídeos curtos da Globo, com novelas, realities, esporte e entretenimento em formato vertical. Para assistir, a pessoa precisava entrar com a conta Globo logo no início.</p>
+            <p><strong>Meu papel:</strong> UX Designer Sênior na squad do GloboPop. Conduzi a feature do dado ao handoff: análise do problema, pesquisa, benchmark, princípios, regras de acesso, telas e specs de UI.</p>
+          </section>
+
+          <section class="case-section reveal" id="problema">
+            <p class="overline">02 · Problema</p>
+            <h2 class="h2">A fricção custava usuários antes do primeiro vídeo</h2>
+            <div class="metrics">
+            <div class="metric"><span class="metric__value">75%</span><span class="metric__label">dos usuários abandonavam antes de consumir qualquer conteúdo (jul/2026)</span></div>
+          </div>
+            <p>O login aparecia antes de a pessoa entender o que o app oferece.</p>
+            <div class="callout"><strong>Hipótese:</strong> se a pessoa entender o valor do produto antes, ela vai estar mais disposta a avançar pelo cadastro e pelo login. <strong>Objetivo:</strong> deixar provar o GloboPop antes de pedir o login, sem perder a conversão.</div>
+          </section>
+
+          <section class="case-section reveal" id="processo">
+            <p class="overline">03 · Processo</p>
+            <h2 class="h2">Pesquisa, benchmark e princípios</h2>
+            <ul>
+            <li><strong>Pesquisa em laboratório (abr/2026):</strong> o login não foi uma objeção. O problema era o momento em que ele aparecia, e as pessoas esperavam um feed personalizado desde o primeiro acesso.</li>
+            <li><strong>Benchmark de TikTok, YouTube, Globoplay e Kwai:</strong> nenhum app fecha a porta sem contexto; o limite sempre vem com um benefício e com prova social.</li>
+            <li><strong>Princípios:</strong> engajamento progressivo, limite suave em vez de bloqueio e efeito dotação (quem já consumiu valoriza mais o que usa).</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="solucao">
+            <p class="overline">04 · Solução</p>
+            <h2 class="h2">Provar antes de entrar</h2>
+            <ul>
+            <li><strong>Só o feed fica aberto.</strong> Curtir, comentar, seguir, buscar e abrir o perfil pedem login.</li>
+            <li><strong>Até 12 vídeos por sessão</strong>, com um convite a cada 3 que a pessoa pode ignorar. No 12º, o login é necessário.</li>
+            <li><strong>Gatilhos contextuais:</strong> o login aparece quando a pessoa tenta fazer algo que precisa de conta, no momento em que ela já quer agir.</li>
+            <li><strong>Trazer de volta:</strong> notificações, login salvo e tutoriais de gesto em cima do conteúdo real.</li>
+            <li><strong>Specs e handoff</strong> do modal de login, da navbar anônima e dos botões do feed.</li>
+          </ul>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/feed-gatilhos.jpg" alt="Gatilhos contextuais: o convite aparece quando a pessoa quer interagir." loading="lazy"><figcaption>Gatilhos contextuais: o convite aparece quando a pessoa quer interagir.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="resultados">
+            <p class="overline">05 · Resultados</p>
+            <h2 class="h2">Como vou medir</h2>
+            <p>A feature está em implementação, então ainda não há resultado. A lógica foi desenhada com três variáveis abertas para teste A/B: a quantidade de vídeos livres (12 vs. N), a cadência do convite (a cada 3 vs. 4) e a copy do modal (benefício vs. neutra).</p>
+            <ul>
+            <li>Abandono antes do 1º vídeo, partindo de 75%</li>
+            <li>Conversão de visitantes anônimos em login</li>
+            <li>Vídeos até o login e a origem do login (contagem, 12º vídeo ou gatilho de ação)</li>
+            <li>Retorno em 7 dias</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="aprendizados">
+            <p class="overline">06 · Aprendizados</p>
+            <h2 class="h2">O que levo deste projeto</h2>
+            <ul>
+            <li><strong>O problema era o momento, não o login.</strong> A pesquisa mudou a pergunta: em vez de tirar o login, decidir quando ele aparece.</li>
+            <li><strong>Limite com contexto.</strong> Um bloqueio mudo afasta; um convite que explica o benefício deixa a escolha com a pessoa.</li>
+            <li><strong>Desenhar já pensando no teste.</strong> Deixar quantidade, cadência e copy como variáveis torna a decisão mensurável.</li>
+          </ul>
+          </section>
+
+          <a class="next-case" href="ge-card-de-atleta.html">
+            <div><p class="overline">Próximo projeto</p><p class="h3">ge · Card de atleta & Você sabia?</p></div>
+            <span class="icon-btn icon-btn--brand" aria-hidden="true"><svg class="icon"><use href="../assets/icons.svg#arrow-right"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div data-lang-block="en" lang="en" hidden>
+      <div class="container">
+        <header class="case-hero">
+          <a class="link case-hero__back" href="../index.html#projetos"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-right"/></svg> all projects</a>
+          <p class="overline">Globo · GloboPop</p>
+          <ul class="tag-list"><li class="tag tag--brand">Growth</li><li class="tag tag--outline">Research</li><li class="tag tag--outline">A/B test</li></ul>
+          <h1 class="case-title">Anonymous preview feed</h1>
+          <p class="body-l text-secondary" style="max-width: 760px">A feed that lets people watch without logging in and invites them to sign up at the right moment, instead of blocking the way in.</p>
+          <dl class="case-meta">
+            <div><dt>Company</dt><dd>Globo · GloboPop (via ACT)</dd></div>
+            <div><dt>My role</dt><dd>Senior UX Designer</dd></div>
+            <div><dt>Period</dt><dd>2026</dd></div>
+            <div><dt>Status</dt><dd>In implementation</dd></div>
+          </dl>
+        </header>
+        <figure class="case-cover-figure">
+          <img class="case-shot" src="../images/projetos/feed-sessao.jpg" alt="An anonymous session: up to 12 videos, with an invite every 3.">
+          <figcaption>An anonymous session: up to 12 videos, with an invite every 3. <span class="text-tertiary">Provisional image from the Figma deck.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="container case-body">
+        <ul class="case-toc" aria-label="In this case study">
+          <li><a href="#contexto-en">Context</a></li>
+          <li><a href="#problema-en">Problem</a></li>
+          <li><a href="#processo-en">Process</a></li>
+          <li><a href="#solucao-en">Solution</a></li>
+          <li><a href="#resultados-en">Results</a></li>
+          <li><a href="#aprendizados-en">Learnings</a></li>
+        </ul>
+
+        <div class="case-content">
+          <section class="case-section reveal" id="contexto-en">
+            <p class="overline">01 · Context</p>
+            <h2 class="h2">Asking for login before showing value</h2>
+            <p>GloboPop is Globo’s short-video app, with soaps, reality shows, sports and entertainment in vertical format. To watch, people had to sign in with their Globo account right at the start.</p>
+            <p><strong>My role:</strong> Senior UX Designer in the GloboPop squad. I led the feature from data to handoff: problem analysis, research, benchmark, principles, access rules, screens and UI specs.</p>
+          </section>
+
+          <section class="case-section reveal" id="problema-en">
+            <p class="overline">02 · Problem</p>
+            <h2 class="h2">Friction cost users before the first video</h2>
+            <div class="metrics">
+            <div class="metric"><span class="metric__value">75%</span><span class="metric__label">of users dropped off before consuming any content (Jul/2026)</span></div>
+          </div>
+            <p>The login appeared before people understood what the app offers.</p>
+            <div class="callout"><strong>Hypothesis:</strong> if people understand the product’s value first, they’ll be more willing to go through sign-up and login. <strong>Goal:</strong> let people try GloboPop before asking for login, without losing conversion.</div>
+          </section>
+
+          <section class="case-section reveal" id="processo-en">
+            <p class="overline">03 · Process</p>
+            <h2 class="h2">Research, benchmark and principles</h2>
+            <ul>
+            <li><strong>Lab research (Apr/2026):</strong> login wasn’t an objection. The problem was when it appeared, and people expected a personalized feed from the very first visit.</li>
+            <li><strong>Benchmark of TikTok, YouTube, Globoplay and Kwai:</strong> no app closes the door without context; the limit always comes with a benefit and social proof.</li>
+            <li><strong>Principles:</strong> progressive engagement, a soft limit instead of a block, and the endowment effect (people value more what they’ve already used).</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="solucao-en">
+            <p class="overline">04 · Solution</p>
+            <h2 class="h2">Try before you sign in</h2>
+            <ul>
+            <li><strong>Only the feed is open.</strong> Liking, commenting, following, searching and opening the profile require login.</li>
+            <li><strong>Up to 12 videos per session</strong>, with an invite every 3 that people can ignore. At the 12th, login is required.</li>
+            <li><strong>Contextual triggers:</strong> login appears when people try to do something that needs an account, right when they already want to act.</li>
+            <li><strong>Bring people back:</strong> notifications, saved login and gesture tutorials on top of real content.</li>
+            <li><strong>Specs and handoff</strong> for the login modal, the anonymous navbar and the feed buttons.</li>
+          </ul>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/feed-gatilhos.jpg" alt="Contextual triggers: the invite appears when people want to interact." loading="lazy"><figcaption>Contextual triggers: the invite appears when people want to interact.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="resultados-en">
+            <p class="overline">05 · Results</p>
+            <h2 class="h2">How I’ll measure it</h2>
+            <p>The feature is in implementation, so there are no results yet. The logic was designed with three open variables for A/B testing: the number of free videos (12 vs. N), the invite cadence (every 3 vs. 4) and the modal copy (benefit vs. neutral).</p>
+            <ul>
+            <li>Drop-off before the 1st video, starting from 75%</li>
+            <li>Conversion of anonymous visitors into logins</li>
+            <li>Videos until login and the login source (count, 12th video or action trigger)</li>
+            <li>7-day return</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="aprendizados-en">
+            <p class="overline">06 · Learnings</p>
+            <h2 class="h2">What I take from this project</h2>
+            <ul>
+            <li><strong>The problem was the timing, not the login.</strong> Research changed the question: instead of removing login, decide when it shows up.</li>
+            <li><strong>A limit with context.</strong> A silent block pushes people away; an invite that explains the benefit leaves the choice to them.</li>
+            <li><strong>Design with the test in mind.</strong> Keeping quantity, cadence and copy as variables makes the decision measurable.</li>
+          </ul>
+          </section>
+
+          <a class="next-case" href="ge-card-de-atleta.html">
+            <div><p class="overline">Next project</p><p class="h3">ge · Athlete card & Did you know?</p></div>
+            <span class="icon-btn icon-btn--brand" aria-hidden="true"><svg class="icon"><use href="../assets/icons.svg#arrow-right"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cta">
+        <p class="overline" data-i18n="case.foot.overline">Contato</p>
+        <p class="display-l" data-i18n="case.foot.title">Vamos criar algo juntos?</p>
+        <a class="contact__email" href="mailto:olais.design@gmail.com">olais.design@gmail.com</a>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="caption text-tertiary">© <span data-year>2026</span> Laís Araujo · São Paulo, SP</p>
+        <ul class="social">
+          <li><a class="link" href="https://www.linkedin.com/in/laisaaraujo/" target="_blank" rel="noopener">LinkedIn <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up-right"/></svg></a></li>
+          <li><a class="link" href="../assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="foot.cv">Currículo</span> <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up-right"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../i18n.js?v=41" defer></script>
+  <script src="../scripts.js?v=41" defer></script>
+  <script src="../fluid.js?v=41" defer></script>
+</body>
+</html>

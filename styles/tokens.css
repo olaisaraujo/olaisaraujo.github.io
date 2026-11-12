@@ -1,0 +1,173 @@
+/* ==========================================================================
+   olaís design system — tokens
+   Espelha as variáveis do Figma (arquivo "Design System": Primitives, Color,
+   Spacing, Radius) e os estilos de texto/efeito. Use sempre os semânticos
+   (--color-*) nos componentes; as primitivas existem só para alimentá-los.
+   ========================================================================== */
+
+:root {
+  /* ---------- Primitives ---------- */
+  --purple-50: #F4ECFF;  --purple-100: #E6D5FF; --purple-200: #CFADFF; --purple-300: #B884FF; --purple-400: #A766FF;
+  --purple-500: #9747FF; --purple-600: #7F2EEB; --purple-700: #6A1FCC; --purple-800: #5214A3; --purple-900: #3A0E75;
+
+  --lime-50: #F7FDE6;  --lime-100: #EEFAC8; --lime-200: #DDF494; --lime-300: #CDEF66; --lime-400: #BDEA3C;
+  --lime-500: #A3D21F; --lime-600: #82A916; --lime-700: #627F12; --lime-800: #445810; --lime-900: #2A360B;
+
+  --neutral-0: #FFFFFF;   --neutral-50: #F5F5F5;  --neutral-100: #E8E8E8; --neutral-200: #D1D1D1; --neutral-300: #B0B0B0;
+  --neutral-400: #8A8A8A; --neutral-500: #6B6B6B; --neutral-600: #4A4A4A; --neutral-700: #2C2C2C; --neutral-800: #1F1F1F;
+  --neutral-850: #151515; --neutral-900: #0D0D0D; --neutral-1000: #000000;
+
+  --lilac-400: #B993D6; --sky-400: #8CA6DB; --mint-200: #BDFFF3;
+  --green-400: #4ADE80; --green-600: #16A34A; --amber-400: #FBBF24; --amber-600: #D97706; --red-400: #F87171; --red-600: #DC2626;
+
+  --alpha-white-5: rgb(255 255 255 / 0.05); --alpha-white-10: rgb(255 255 255 / 0.10); --alpha-white-20: rgb(255 255 255 / 0.20);
+  --alpha-black-5: rgb(0 0 0 / 0.05); --alpha-black-10: rgb(0 0 0 / 0.10); --alpha-black-30: rgb(0 0 0 / 0.30); --alpha-black-60: rgb(0 0 0 / 0.60);
+
+  /* ---------- Spacing (escala de 4px) ---------- */
+  --spacing-0: 0;      --spacing-1: 4px;   --spacing-2: 8px;   --spacing-3: 12px;  --spacing-4: 16px;
+  --spacing-5: 20px;   --spacing-6: 24px;  --spacing-8: 32px;  --spacing-10: 40px; --spacing-12: 48px;
+  --spacing-16: 64px;  --spacing-20: 80px; --spacing-24: 96px; --spacing-30: 120px; --spacing-32: 128px;
+
+  /* ---------- Radius ---------- */
+  --radius-none: 0; --radius-xs: 4px; --radius-sm: 8px; --radius-md: 16px; --radius-lg: 24px; --radius-xl: 40px; --radius-full: 999px;
+
+  /* ---------- Typography (Poppins) ---------- */
+  --font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-brand: "Unbounded", "Poppins", system-ui, sans-serif; /* Brand · Unbounded Black (900) */
+  --text-brand-hero: 900 clamp(40px, 4.6vw, 80px)/1.06 var(--font-brand);
+  /* tamanhos fluidos: mínimo no celular → valor do Figma no desktop */
+  --text-display-xl: 700 clamp(44px, 7vw, 72px)/1.05 var(--font-family);
+  --text-display-l:  600 clamp(36px, 5.5vw, 56px)/1.1 var(--font-family);
+  --text-h1:         600 clamp(32px, 4.5vw, 48px)/1.15 var(--font-family);
+  --text-h2:         700 clamp(28px, 4vw, 40px)/1.2 var(--font-family);
+  --text-h3:         600 clamp(24px, 3vw, 32px)/1.25 var(--font-family);
+  --text-h4:         700 24px/1.3 var(--font-family);
+  --text-h5:         600 20px/1.4 var(--font-family);
+  --text-body-l:     400 clamp(18px, 1.6vw, 20px)/1.5 var(--font-family);
+  --text-body-m:     400 16px/1.5 var(--font-family);
+  --text-body-s:     400 14px/1.5 var(--font-family);
+  --text-label-l:    600 18px/1.2 var(--font-family);
+  --text-label-m:    600 16px/1.2 var(--font-family);
+  --text-label-s:    600 14px/1.2 var(--font-family);
+  --text-caption:    400 12px/1.4 var(--font-family);
+  --text-overline:   600 12px/1.4 var(--font-family);
+  --tracking-tight: -0.015em; /* títulos e labels */
+  --tracking-body:  -0.005em;
+  --tracking-overline: 0.08em;
+
+  /* ---------- Effects ---------- */
+  --blur-sm: blur(15px);
+  --blur-lg: blur(25px);
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.25);
+  --shadow-md: 0 8px 24px -4px rgb(0 0 0 / 0.35);
+  --shadow-glow-brand: 0 0 24px rgb(151 71 255 / 0.45);
+
+  /* ---------- Gradients ---------- */
+  --color-gradient-lilac-start: var(--lilac-400); --color-gradient-lilac-end: var(--sky-400);
+  --color-gradient-lime-start: var(--lime-400);   --color-gradient-lime-end: var(--mint-200);
+  --gradient-lilac: linear-gradient(90deg, var(--color-gradient-lilac-start), var(--color-gradient-lilac-end));
+  --gradient-lime: linear-gradient(90deg, var(--color-gradient-lime-start), var(--color-gradient-lime-end));
+
+  /* ---------- Layout ---------- */
+  --container: 1280px;
+  --gutter: clamp(16px, 5vw, 80px);
+}
+
+/* ---------- Color — modo Dark (padrão) ---------- */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg-base: var(--neutral-1000);
+  --color-bg-primary: var(--neutral-900);
+  --color-bg-secondary: var(--neutral-850);
+  --color-bg-elevated: var(--neutral-800);
+  --color-bg-inverse: var(--neutral-0);
+  --color-bg-glass: var(--alpha-white-10);
+  --color-bg-scrim: var(--alpha-black-10);
+  --color-bg-scrim-strong: var(--alpha-black-30);
+  --color-bg-overlay: var(--alpha-black-60);
+
+  --color-surface-brand: var(--purple-500);
+  --color-surface-brand-hover: var(--purple-400);
+  --color-surface-brand-subtle: var(--purple-900);
+  --color-surface-accent: var(--lime-400);
+  --color-surface-accent-subtle: var(--lime-900);
+  --color-surface-neutral: var(--neutral-700);
+  --color-surface-disabled: var(--neutral-800);
+
+  --color-text-primary: var(--neutral-0);
+  --color-text-secondary: var(--neutral-300);
+  --color-text-tertiary: var(--neutral-500);
+  --color-text-disabled: var(--neutral-600);
+  --color-text-inverse: var(--neutral-900);
+  --color-text-brand: var(--purple-300);
+  --color-text-accent: var(--lime-400);
+  --color-text-on-brand: var(--neutral-0);
+  --color-text-on-accent: var(--neutral-1000);
+
+  --color-border-default: var(--alpha-white-20);
+  --color-border-subtle: var(--alpha-white-10);
+  --color-border-strong: var(--neutral-0);
+  --color-border-brand: var(--purple-500);
+  --color-border-focus: var(--lime-400);
+
+  --color-icon-primary: var(--neutral-0);
+  --color-icon-secondary: var(--neutral-300);
+  --color-icon-inverse: var(--neutral-900);
+  --color-icon-brand: var(--purple-300);
+  --color-icon-accent: var(--lime-400);
+  --color-icon-on-brand: var(--neutral-0);
+
+  --color-feedback-success: var(--green-400);
+  --color-feedback-warning: var(--amber-400);
+  --color-feedback-error: var(--red-400);
+}
+
+/* ---------- Color — modo Light ---------- */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg-base: var(--neutral-0);
+  --color-bg-primary: var(--neutral-0);
+  --color-bg-secondary: var(--neutral-50);
+  --color-bg-elevated: var(--neutral-0);
+  --color-bg-inverse: var(--neutral-900);
+  --color-bg-glass: var(--alpha-black-5);
+  --color-bg-scrim: var(--alpha-black-5);
+  --color-bg-scrim-strong: var(--alpha-black-10);
+  --color-bg-overlay: var(--alpha-black-30);
+
+  --color-surface-brand: var(--purple-500);
+  --color-surface-brand-hover: var(--purple-600);
+  --color-surface-brand-subtle: var(--purple-50);
+  --color-surface-accent: var(--lime-400);
+  --color-surface-accent-subtle: var(--lime-50);
+  --color-surface-neutral: var(--neutral-100);
+  --color-surface-disabled: var(--neutral-100);
+
+  --color-text-primary: var(--neutral-900);
+  --color-text-secondary: var(--neutral-600);
+  --color-text-tertiary: var(--neutral-400);
+  --color-text-disabled: var(--neutral-300);
+  --color-text-inverse: var(--neutral-0);
+  --color-text-brand: var(--purple-600);
+  --color-text-accent: var(--lime-700);
+  --color-text-on-brand: var(--neutral-0);
+  --color-text-on-accent: var(--neutral-1000);
+
+  --color-border-default: var(--neutral-200);
+  --color-border-subtle: var(--neutral-100);
+  --color-border-strong: var(--neutral-900);
+  --color-border-brand: var(--purple-500);
+  --color-border-focus: var(--purple-600);
+
+  --color-icon-primary: var(--neutral-900);
+  --color-icon-secondary: var(--neutral-600);
+  --color-icon-inverse: var(--neutral-0);
+  --color-icon-brand: var(--purple-500);
+  --color-icon-accent: var(--lime-700);
+  --color-icon-on-brand: var(--neutral-0);
+
+  --color-feedback-success: var(--green-600);
+  --color-feedback-warning: var(--amber-600);
+  --color-feedback-error: var(--red-600);
+}

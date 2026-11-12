@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="pt-BR" data-title-en="BR Media · MIS Communities — Laís Araujo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BR Media · Comunidades MIS — Laís Araujo</title>
+  <meta name="description" content="Estudo de caso: Uma feature criada do zero, com dois lados: o app do creator (MIS) e o painel da marca (SIC). Hoje ela roda para Dove, Pantene e Cetaphil.">
+  <meta name="theme-color" content="#0D0D0D">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Unbounded:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/tokens.css?v=41">
+  <link rel="stylesheet" href="../styles/main.css?v=41">
+  <link rel="stylesheet" href="../styles/motion.css?v=41">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;if(localStorage.getItem('lang')==='en')document.documentElement.classList.add('lang-en')}catch(e){}</script>
+</head>
+<body>
+  <a class="skip-link btn btn--primary" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" aria-label="olaís — início"><span class="logo" aria-hidden="true"></span></a>
+      <nav class="site-nav" aria-label="Principal">
+        <a href="../index.html#sobre" data-i18n="nav.about">sobre</a>
+        <a href="../index.html#projetos" aria-current="page" data-i18n="nav.projects">projetos</a>
+        <a href="../index.html#feedbacks" data-i18n="nav.feedbacks">feedbacks</a>
+        <a href="../index.html#contato" data-i18n="nav.contact">contato</a>
+      </nav>
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR" aria-label="Português">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+        </div>
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="../assets/icons.svg#moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="../assets/icons.svg#sun"/></svg>
+        </button>
+        <a class="btn btn--primary" href="https://wa.me/5511966239797" target="_blank" rel="noopener">WhatsApp <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#chat"/></svg></a>
+      </div>
+    </div>
+  </header>
+  <nav class="menu-toggle" aria-label="Atalhos">
+    <a href="../index.html#projetos" class="is-active"><span data-i18n="nav.projects">projetos</span> <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up-right"/></svg></a>
+    <a href="../index.html#contato" data-i18n="nav.talk">fale comigo</a>
+  </nav>
+  <main id="conteudo">
+    <div data-lang-block="pt">
+      <div class="container">
+        <header class="case-hero">
+          <a class="link case-hero__back" href="../index.html#projetos"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-right"/></svg> todos os projetos</a>
+          <p class="overline">BR Media · App MIS</p>
+          <ul class="tag-list"><li class="tag tag--brand">Creator economy</li><li class="tag tag--outline">Mobile + Web</li><li class="tag tag--outline">Produto 0→1</li></ul>
+          <h1 class="case-title">Comunidades: um espaço contínuo entre marcas e creators</h1>
+          <p class="body-l text-secondary" style="max-width: 760px">Uma feature criada do zero, com dois lados: o app do creator (MIS) e o painel da marca (SIC). Hoje ela roda para Dove, Pantene e Cetaphil.</p>
+          <dl class="case-meta">
+            <div><dt>Empresa</dt><dd>BR Media</dd></div>
+            <div><dt>Meu papel</dt><dd>Product Designer Sênior</dd></div>
+            <div><dt>Período</dt><dd>2024 — 2026</dd></div>
+            <div><dt>Time</dt><dd>PM, PO, community managers e tecnologia</dd></div>
+          </dl>
+        </header>
+        <figure class="case-cover-figure">
+          <img class="case-shot" src="../images/projetos/mis-missoes.jpg" alt="Missões no app MIS: briefing, prazo, pontos e status da entrega.">
+          <figcaption>Missões no app MIS: briefing, prazo, pontos e status da entrega. <span class="text-tertiary">Imagem provisória do deck no Figma.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="container case-body">
+        <ul class="case-toc" aria-label="Neste estudo de caso">
+          <li><a href="#contexto">Contexto</a></li>
+          <li><a href="#problema">Problema</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#solucao">Solução</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#aprendizados">Aprendizados</a></li>
+        </ul>
+
+        <div class="case-content">
+          <section class="case-section reveal" id="contexto">
+            <p class="overline">01 · Contexto</p>
+            <h2 class="h2">De campanhas pontuais a uma relação contínua</h2>
+            <p>O MIS é o app da BR Media que conecta marcas a influenciadores e microinfluenciadores. Até então, a relação acontecia por campanhas: a marca convidava, o creator entregava e a ação terminava.</p>
+            <p><strong>Meu papel:</strong> Product Designer da feature de Comunidades, do conceito ao handoff, nos dois lados do produto: a experiência do creator no app MIS e o painel de gestão da marca no SIC.</p>
+          </section>
+
+          <section class="case-section reveal" id="problema">
+            <p class="overline">02 · Problema</p>
+            <h2 class="h2">Campanhas pontuais não criam vínculo</h2>
+            <p>Quando a entrega terminava, a marca perdia o contato com os creators e a próxima ação começava do zero.</p>
+            <div class="callout"><strong>Hipótese:</strong> se a marca tiver um espaço próprio e contínuo, com missões, feed e pontuação, os creators voltam com frequência, produzem mais conteúdo e a relação vira um produto recorrente.</div>
+            <ul>
+            <li><strong>Para o creator:</strong> um motivo para voltar, com missões, conversa e reconhecimento.</li>
+            <li><strong>Para a marca:</strong> controle sobre membros, entregas e resultados.</li>
+            <li><strong>Para a BR Media:</strong> um produto replicável, que se configura para cada nova marca.</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="processo">
+            <p class="overline">03 · Processo</p>
+            <h2 class="h2">Um produto, dois lados</h2>
+            <p>O mesmo conceito precisava funcionar em duas interfaces: mobile para quem cria conteúdo e web para quem administra a comunidade.</p>
+            <ul>
+            <li>Mapear papéis: quem é o creator, quem é o gestor e o que cada um pode fazer</li>
+            <li>Desenhar os fluxos de ponta a ponta: descoberta, entrada, feed, missão, entrega e pontuação</li>
+            <li>Benchmarking de redes sociais para comentários, respostas e reações</li>
+            <li>Regras de negócio (elegibilidade, status, níveis e estados vazios) documentadas no Figma</li>
+            <li>Componentes próprios e specs para o time de tecnologia</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="solucao">
+            <p class="overline">04 · Solução</p>
+            <h2 class="h2">Creator no app, marca no painel</h2>
+            <h3 class="h4">Lado creator · app MIS</h3>
+            <ul>
+            <li><strong>Descoberta:</strong> a comunidade aparece na Home e ganha um menu próprio.</li>
+            <li><strong>Entrada:</strong> comunidades privadas por convite ou solicitação, com status visível.</li>
+            <li><strong>Feed:</strong> posts da marca com curtidas e comentários, entre uma missão e outra.</li>
+            <li><strong>Missões:</strong> briefing, prazo e pontos; a entrega fica em análise, aprovada ou reprovada.</li>
+            <li><strong>Pontuação e ranking:</strong> quatro níveis com prêmios definidos pela marca.</li>
+          </ul>
+            <h3 class="h4">Lado marca · SIC</h3>
+            <ul>
+            <li>Criar a comunidade, aprovar solicitações e acompanhar membros, publicações e missões numa visão geral.</li>
+            <li>Criar missões com nome, prazo, pontos, tipo e briefing. Cada campo do SIC tem reflexo direto no app do creator.</li>
+            <li>Segmentação de público e testes A/B para pesquisas e campanhas.</li>
+          </ul>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/mis-sic.jpg" alt="Gestão da comunidade no SIC: visão geral e solicitações de entrada." loading="lazy"><figcaption>Gestão da comunidade no SIC: visão geral e solicitações de entrada.</figcaption></figure>
+            <p><strong>Evolução depois do lançamento:</strong> comentários em fio, central de notificações, pesquisas no app (integração com o Formbricks), navegação em abas e um teste A/B na tela de missão, com uma hipótese por variável (briefing, tipo de conteúdo, imagem e descrição).</p>
+          </section>
+
+          <section class="case-section reveal" id="resultados">
+            <p class="overline">05 · Resultados</p>
+            <h2 class="h2">EmbaixaDove: fev/2026 vs. jan/2026</h2>
+            <div class="metrics">
+            <div class="metric"><span class="metric__value">1,1M</span><span class="metric__label">impactos (+442% vs. janeiro)</span></div>
+            <div class="metric metric--brand"><span class="metric__value">+519%</span><span class="metric__label">em engajamentos (152 mil)</span></div>
+            <div class="metric"><span class="metric__value">13,05%</span><span class="metric__label">de taxa de engajamento, vs. 6,0% do segmento</span></div>
+            <div class="metric metric--brand"><span class="metric__value">92,5%</span><span class="metric__label">de comentários positivos</span></div>
+          </div>
+            <p>O produto está no ar em formatos diferentes: <strong>EmbaixaDove</strong> como app próprio da marca, e <strong>PanteamClub</strong> e <strong>Cetaphil Checkin</strong> dentro do MIS. Os números são do time de Data Insights e refletem o trabalho conjunto de produto, design e community management.</p>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/mis-resultados.jpg" alt="Resultados da comunidade EmbaixaDove." loading="lazy"><figcaption>Resultados da comunidade EmbaixaDove.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="aprendizados">
+            <p class="overline">06 · Aprendizados</p>
+            <h2 class="h2">O que levo deste projeto</h2>
+            <ul>
+            <li><strong>Dois lados, um sistema.</strong> Cada decisão no app tinha reflexo no painel da marca; desenhar os dois juntos evitou retrabalho.</li>
+            <li><strong>Regras antes de telas.</strong> Pontuação, níveis, elegibilidade e status precisavam estar claros para o produto escalar entre marcas.</li>
+            <li><strong>Testar uma coisa de cada vez.</strong> Separar as variáveis da missão mostra o que de fato muda o comportamento do creator.</li>
+          </ul>
+            <p><strong>Próximos passos:</strong> medir a saúde do produto, não só da campanha: ativação de creators acima de 60%, primeira missão entregue em até 7 dias e retenção acima de 40% do mês 1 para o mês 2.</p>
+          </section>
+
+          <a class="next-case" href="globopop-feed-anonimo.html">
+            <div><p class="overline">Próximo projeto</p><p class="h3">GloboPop · Feed anônimo</p></div>
+            <span class="icon-btn icon-btn--brand" aria-hidden="true"><svg class="icon"><use href="../assets/icons.svg#arrow-right"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div data-lang-block="en" lang="en" hidden>
+      <div class="container">
+        <header class="case-hero">
+          <a class="link case-hero__back" href="../index.html#projetos"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-right"/></svg> all projects</a>
+          <p class="overline">BR Media · MIS app</p>
+          <ul class="tag-list"><li class="tag tag--brand">Creator economy</li><li class="tag tag--outline">Mobile + Web</li><li class="tag tag--outline">Product 0→1</li></ul>
+          <h1 class="case-title">Communities: an ongoing space between brands and creators</h1>
+          <p class="body-l text-secondary" style="max-width: 760px">A feature built from scratch, with two sides: the creator app (MIS) and the brand panel (SIC). It now runs for Dove, Pantene and Cetaphil.</p>
+          <dl class="case-meta">
+            <div><dt>Company</dt><dd>BR Media</dd></div>
+            <div><dt>My role</dt><dd>Senior Product Designer</dd></div>
+            <div><dt>Period</dt><dd>2024 — 2026</dd></div>
+            <div><dt>Team</dt><dd>PM, PO, community managers and engineering</dd></div>
+          </dl>
+        </header>
+        <figure class="case-cover-figure">
+          <img class="case-shot" src="../images/projetos/mis-missoes.jpg" alt="Missions in the MIS app: briefing, deadline, points and delivery status.">
+          <figcaption>Missions in the MIS app: briefing, deadline, points and delivery status. <span class="text-tertiary">Provisional image from the Figma deck.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="container case-body">
+        <ul class="case-toc" aria-label="In this case study">
+          <li><a href="#contexto-en">Context</a></li>
+          <li><a href="#problema-en">Problem</a></li>
+          <li><a href="#processo-en">Process</a></li>
+          <li><a href="#solucao-en">Solution</a></li>
+          <li><a href="#resultados-en">Results</a></li>
+          <li><a href="#aprendizados-en">Learnings</a></li>
+        </ul>
+
+        <div class="case-content">
+          <section class="case-section reveal" id="contexto-en">
+            <p class="overline">01 · Context</p>
+            <h2 class="h2">From one-off campaigns to an ongoing relationship</h2>
+            <p>MIS is BR Media’s app that connects brands with influencers and micro-influencers. Until then, the relationship happened through campaigns: the brand invited, the creator delivered and the action ended.</p>
+            <p><strong>My role:</strong> Product Designer for the Communities feature, from concept to handoff, on both sides of the product: the creator experience in the MIS app and the brand management panel in SIC.</p>
+          </section>
+
+          <section class="case-section reveal" id="problema-en">
+            <p class="overline">02 · Problem</p>
+            <h2 class="h2">One-off campaigns don’t build a bond</h2>
+            <p>Once the delivery was done, the brand lost touch with the creators and the next action started from zero.</p>
+            <div class="callout"><strong>Hypothesis:</strong> if the brand has its own ongoing space, with missions, a feed and points, creators come back often, produce more content and the relationship becomes a recurring product.</div>
+            <ul>
+            <li><strong>For the creator:</strong> a reason to come back, with missions, conversation and recognition.</li>
+            <li><strong>For the brand:</strong> control over members, deliveries and results.</li>
+            <li><strong>For BR Media:</strong> a repeatable product that can be configured for each new brand.</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="processo-en">
+            <p class="overline">03 · Process</p>
+            <h2 class="h2">One product, two sides</h2>
+            <p>The same concept had to work in two interfaces: mobile for content creators and web for whoever manages the community.</p>
+            <ul>
+            <li>Map roles: who the creator is, who the manager is and what each one can do</li>
+            <li>Design the flows end to end: discovery, joining, feed, mission, delivery and points</li>
+            <li>Benchmark social networks for comments, replies and reactions</li>
+            <li>Business rules (eligibility, statuses, levels and empty states) documented in Figma</li>
+            <li>Custom components and specs for the engineering team</li>
+          </ul>
+          </section>
+
+          <section class="case-section reveal" id="solucao-en">
+            <p class="overline">04 · Solution</p>
+            <h2 class="h2">Creators in the app, brands in the panel</h2>
+            <h3 class="h4">Creator side · MIS app</h3>
+            <ul>
+            <li><strong>Discovery:</strong> the community shows up on the Home and gets its own menu.</li>
+            <li><strong>Joining:</strong> private communities by invite or request, with a visible status.</li>
+            <li><strong>Feed:</strong> brand posts with likes and comments, between one mission and the next.</li>
+            <li><strong>Missions:</strong> briefing, deadline and points; the delivery is in review, approved or rejected.</li>
+            <li><strong>Points and ranking:</strong> four levels with prizes set by the brand.</li>
+          </ul>
+            <h3 class="h4">Brand side · SIC</h3>
+            <ul>
+            <li>Create the community, approve join requests and follow members, posts and missions in an overview.</li>
+            <li>Create missions with name, deadline, points, type and briefing. Every SIC field has a direct effect in the creator app.</li>
+            <li>Audience segmentation and A/B tests for surveys and campaigns.</li>
+          </ul>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/mis-sic.jpg" alt="Community management in SIC: overview and join requests." loading="lazy"><figcaption>Community management in SIC: overview and join requests.</figcaption></figure>
+            <p><strong>Evolution after launch:</strong> threaded comments, a notification center, in-app surveys (Formbricks integration), tab navigation and an A/B test on the mission screen, with one hypothesis per variable (briefing, content type, image and description).</p>
+          </section>
+
+          <section class="case-section reveal" id="resultados-en">
+            <p class="overline">05 · Results</p>
+            <h2 class="h2">EmbaixaDove: Feb/2026 vs. Jan/2026</h2>
+            <div class="metrics">
+            <div class="metric"><span class="metric__value">1.1M</span><span class="metric__label">impressions (+442% vs. January)</span></div>
+            <div class="metric metric--brand"><span class="metric__value">+519%</span><span class="metric__label">in engagements (152k)</span></div>
+            <div class="metric"><span class="metric__value">13.05%</span><span class="metric__label">engagement rate, vs. 6.0% for the segment</span></div>
+            <div class="metric metric--brand"><span class="metric__value">92.5%</span><span class="metric__label">positive comments</span></div>
+          </div>
+            <p>The product is live in different formats: <strong>EmbaixaDove</strong> as the brand’s own app, and <strong>PanteamClub</strong> and <strong>Cetaphil Checkin</strong> inside MIS. The numbers come from the Data Insights team and reflect the joint work of product, design and community management.</p>
+            <figure class="case-figure"><img class="case-shot" src="../images/projetos/mis-resultados.jpg" alt="Results of the EmbaixaDove community." loading="lazy"><figcaption>Results of the EmbaixaDove community.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="aprendizados-en">
+            <p class="overline">06 · Learnings</p>
+            <h2 class="h2">What I take from this project</h2>
+            <ul>
+            <li><strong>Two sides, one system.</strong> Every decision in the app had an effect on the brand panel; designing both together avoided rework.</li>
+            <li><strong>Rules before screens.</strong> Points, levels, eligibility and statuses had to be clear for the product to scale across brands.</li>
+            <li><strong>Test one thing at a time.</strong> Separating the mission’s variables shows what really changes creator behavior.</li>
+          </ul>
+            <p><strong>Next steps:</strong> measure the health of the product, not just the campaign: creator activation above 60%, first mission delivered within 7 days and retention above 40% from month 1 to month 2.</p>
+          </section>
+
+          <a class="next-case" href="globopop-feed-anonimo.html">
+            <div><p class="overline">Next project</p><p class="h3">GloboPop · Anonymous feed</p></div>
+            <span class="icon-btn icon-btn--brand" aria-hidden="true"><svg class="icon"><use href="../assets/icons.svg#arrow-right"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cta">
+        <p class="overline" data-i18n="case.foot.overline">Contato</p>
+        <p class="display-l" data-i18n="case.foot.title">Vamos criar algo juntos?</p>
+        <a class="contact__email" href="mailto:olais.design@gmail.com">olais.design@gmail.com</a>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="caption text-tertiary">© <span data-year>2026</span> Laís Araujo · São Paulo, SP</p>
+        <ul class="social">
+          <li><a class="link" href="https://www.linkedin.com/in/laisaaraujo/" target="_blank" rel="noopener">LinkedIn <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up-right"/></svg></a></li>
+          <li><a class="link" href="../assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="foot.cv">Currículo</span> <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up-right"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../i18n.js?v=41" defer></script>
+  <script src="../scripts.js?v=41" defer></script>
+  <script src="../fluid.js?v=41" defer></script>
+</body>
+</html>
