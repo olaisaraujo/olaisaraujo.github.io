@@ -112,6 +112,7 @@
   --color-border-focus: var(--lime-400);
 
   --color-icon-primary: var(--neutral-0);
+  --logo-filter: brightness(0) invert(1); /* logos pretos (PNG/SVG) ficam brancos no tema escuro */
   --color-icon-secondary: var(--neutral-300);
   --color-icon-inverse: var(--neutral-900);
   --color-icon-brand: var(--purple-300);
@@ -161,6 +162,7 @@
   --color-border-focus: var(--purple-600);
 
   --color-icon-primary: var(--neutral-900);
+  --logo-filter: brightness(0); /* e pretos no tema claro */
   --color-icon-secondary: var(--neutral-600);
   --color-icon-inverse: var(--neutral-0);
   --color-icon-brand: var(--purple-500);

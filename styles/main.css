@@ -47,10 +47,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- Logo (máscara: segue color/icon/primary) ---------- */
 .logo {
-  display: inline-block; width: 92px; aspect-ratio: 110 / 55;
-  background: var(--color-icon-primary);
-  -webkit-mask: url("../assets/logo.svg") center / contain no-repeat;
-          mask: url("../assets/logo.svg") center / contain no-repeat;
+  display: inline-block; width: 92px; height: auto; aspect-ratio: 110 / 55; vertical-align: middle;
+  filter: var(--logo-filter); /* o SVG é preto: no tema escuro fica branco */
 }
 
 /* ---------- Icon ---------- */
@@ -193,7 +191,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: #fff; box-shadow: 0 6px 18px -8px rgb(0 0 0 / .3);
   transition: background-color .45s ease, transform .5s var(--ease-out, ease);
 }
-.project-card__logo .company-logo { background: var(--neutral-1000); max-width: 64px; height: var(--h); transition: background-color .45s ease; }
+.project-card__logo .company-logo { filter: brightness(0); opacity: 1; max-width: 64px; height: var(--h); width: auto; transition: filter .45s ease; }
 .project-card__arrow {
   display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
   border: 1px solid var(--card-line); color: var(--card-ink); transition: transform .45s var(--ease-out, ease), background-color .3s, color .3s, border-color .3s;
@@ -224,7 +222,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .project-card:hover .project-card__inner::before, .project-card:focus-within .project-card__inner::before { opacity: 1; }
 .project-card:hover .project-card__title, .project-card:focus-within .project-card__title { color: var(--purple-900); }
 .project-card:hover .project-card__logo, .project-card:focus-within .project-card__logo { background: var(--neutral-1000); transform: scale(1.06); }
-.project-card:hover .project-card__logo .company-logo, .project-card:focus-within .project-card__logo .company-logo { background: #fff; }
+.project-card:hover .project-card__logo .company-logo, .project-card:focus-within .project-card__logo .company-logo { filter: brightness(0) invert(1); }
 .project-card:hover .project-card__arrow, .project-card:focus-within .project-card__arrow { background: var(--purple-500); border-color: transparent; color: #fff; transform: rotate(45deg); }
 .project-card:hover .project-card__cta, .project-card:focus-within .project-card__cta { color: var(--purple-900); }
 .project-card:hover .project-card__cta > span::after, .project-card:focus-within .project-card__cta > span::after { transform: scaleX(1); }

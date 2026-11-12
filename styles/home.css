@@ -48,10 +48,9 @@
 .logos__group { display: flex; align-items: center; gap: clamp(48px, 7vw, 96px); padding-inline: clamp(24px, 3.5vw, 48px); }
 .logos__item { font: var(--text-h4); letter-spacing: var(--tracking-tight); color: var(--color-text-tertiary); white-space: nowrap; transition: color .2s ease; }
 .logos__item { display: flex; align-items: center; }
-.company-logo { display: block; height: var(--h, 32px); aspect-ratio: var(--ratio); flex: none;
-  background: var(--color-icon-secondary); opacity: .75; transition: background-color .2s ease, opacity .2s ease;
-  -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
-.logos__item:hover .company-logo { background: var(--color-icon-primary); opacity: 1; }
+.company-logo { display: block; height: var(--h, 32px); width: auto; max-width: none; flex: none;
+  filter: var(--logo-filter); opacity: .6; transition: opacity .2s ease; }
+.logos__item:hover .company-logo { opacity: 1; }
 @media (max-width: 640px) { .company-logo { height: calc(var(--h, 32px) * .75); } }
 .logos__viewport:hover .logos__track, .logos:focus-within .logos__track { animation-play-state: paused; }
 /* Entrada: os logos surgem um a um quando a faixa aparece na tela */
@@ -377,7 +376,7 @@ img.gallery__photo { padding: 0; }
 .site-foot__inner { padding-top: var(--spacing-8); border-top: 1px solid rgb(255 255 255 / .12); }
 .site-foot .link { color: var(--neutral-0); }
 .site-foot .text-tertiary { color: var(--neutral-500); }
-.site-foot .logo { background: var(--neutral-0); }
+.site-foot .logo { filter: brightness(0) invert(1); }
 .site-foot__logo { display: block; width: clamp(120px, 12vw, 160px); height: auto; }
 :root[data-theme="light"] .final-cta .starfield, :root[data-theme="light"] .site-foot .starfield { display: block; }
 @media (max-width: 640px) { .cta-card__btn { width: 100%; justify-content: center; } }
