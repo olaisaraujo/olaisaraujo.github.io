@@ -12,13 +12,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Unbounded:wght@900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/tokens.css?v=48">
-  <link rel="stylesheet" href="styles/main.css?v=48">
-  <link rel="stylesheet" href="styles/home.css?v=48">
-  <link rel="stylesheet" href="styles/motion.css?v=48">
+  <link rel="stylesheet" href="styles/tokens.css?v=49">
+  <link rel="stylesheet" href="styles/main.css?v=49">
+  <link rel="stylesheet" href="styles/home.css?v=49">
+  <link rel="stylesheet" href="styles/motion.css?v=49">
   <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}document.documentElement.classList.add('js')</script>
 </head>
 <body>
+  <!-- Ícones (antes em assets/icons.svg): ficam dentro da página para aparecerem também abrindo o arquivo direto -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+  <symbol id="arrow-down" viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 6l9 7 9-7"/></symbol>
+  <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="star" viewBox="0 0 34 34"><path d="M17 0c1.2 9.6 7.4 15.8 17 17-9.6 1.2-15.8 7.4-17 17-1.2-9.6-7.4-15.8-17-17C9.6 15.8 15.8 9.6 17 0z" stroke="none"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+  <symbol id="file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="quote" viewBox="0 0 24 24"><path d="M10 7H6a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3v1a3 3 0 0 1-3 3M20 7h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3v1a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+</svg>
   <!-- Tela de abertura (animação do logo, 1x por visita; dá para pular) -->
   <div class="preloader" data-preloader>
     <svg viewBox="0 0 800 500" class="logo-intro__svg" aria-hidden="true">
@@ -49,7 +63,7 @@
   <!-- Sem fundo, fixo no topo: some ao descer e volta ao subir -->
   <header class="site-header site-header--overlay">
     <div class="container site-header__inner">
-      <a href="#inicio" aria-label="olaís — início"><span class="logo" aria-hidden="true"></span></a>
+      <a href="#inicio" aria-label="olaís — início"><img class="logo" src="assets/logo.svg" alt="" width="92" height="46"></a>
       <nav class="site-nav" aria-label="Principal">
         <a href="#sobre" data-i18n="nav.about">sobre</a>
         <a href="#projetos" data-i18n="nav.projects">projetos</a>
@@ -62,20 +76,20 @@
           <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
         </div>
         <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
-          <svg class="icon icon-moon" aria-hidden="true"><use href="assets/icons.svg#moon"/></svg>
-          <svg class="icon icon-sun" aria-hidden="true"><use href="assets/icons.svg#sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#sun"/></svg>
         </button>
         <a class="btn btn--outline" href="https://www.linkedin.com/in/laisaaraujo/" target="_blank" rel="noopener">LinkedIn
-          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+          <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
         <!-- WhatsApp (55 + DDD + número, só dígitos) -->
         <a class="btn btn--primary" href="https://wa.me/5511966239797" target="_blank" rel="noopener">WhatsApp
-          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chat"/></svg></a>
+          <svg class="icon" aria-hidden="true"><use href="#chat"/></svg></a>
       </div>
     </div>
   </header>
 
   <nav class="menu-toggle" aria-label="Atalhos">
-    <a href="#projetos" class="is-active"><span data-i18n="nav.projects">projetos</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+    <a href="#projetos" class="is-active"><span data-i18n="nav.projects">projetos</span> <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
     <a href="#contato" data-i18n="nav.talk">fale comigo</a>
   </nav>
 
@@ -89,8 +103,8 @@
         <p class="hello hero-in" style="--i:0" data-i18n="hero.hello">olá, eu sou a Laís</p>
         <h1 class="intro__title" data-split data-i18n="hero.title">Bem-vindo ao meu universo de design, onde cada pixel tem <span class="highlight">um propósito</span>.</h1>
         <div class="intro__actions hero-in" style="--i:2">
-          <a class="btn btn--primary" href="#projetos"><span data-i18n="hero.projects">projetos</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-down"/></svg></a>
-          <a class="btn btn--outline" href="assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="hero.cv">ver currículo</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#file"/></svg></a>
+          <a class="btn btn--primary" href="#projetos"><span data-i18n="hero.projects">projetos</span> <svg class="icon" aria-hidden="true"><use href="#arrow-down"/></svg></a>
+          <a class="btn btn--outline" href="assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="hero.cv">ver currículo</span> <svg class="icon" aria-hidden="true"><use href="#file"/></svg></a>
         </div>
       </div>
     </section>
@@ -104,34 +118,34 @@
       <div class="logos__viewport">
       <div class="logos__track logos__track--left">
         <div class="logos__group">
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="Zamp" style="-webkit-mask-image: url(assets/logos/zamp.svg); mask-image: url(assets/logos/zamp.svg); --ratio: 234/67; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="Burger King" style="-webkit-mask-image: url(assets/logos/burger-king.png); mask-image: url(assets/logos/burger-king.png); --ratio: 184/200; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="Popeyes" style="-webkit-mask-image: url(assets/logos/popeyes.png); mask-image: url(assets/logos/popeyes.png); --ratio: 780/200; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="Trendx" style="-webkit-mask-image: url(assets/logos/trendx.png); mask-image: url(assets/logos/trendx.png); --ratio: 900/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="Goper" style="-webkit-mask-image: url(assets/logos/goper.png); mask-image: url(assets/logos/goper.png); --ratio: 887/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="Omie" style="-webkit-mask-image: url(assets/logos/omie.png); mask-image: url(assets/logos/omie.png); --ratio: 594/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="TV Globo" style="-webkit-mask-image: url(assets/logos/tv-globo.svg); mask-image: url(assets/logos/tv-globo.svg); --ratio: 96/71; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="ge" style="-webkit-mask-image: url(assets/logos/ge.png); mask-image: url(assets/logos/ge.png); --ratio: 282/200; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="gshow" style="-webkit-mask-image: url(assets/logos/gshow.png); mask-image: url(assets/logos/gshow.png); --ratio: 608/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="Receitas" style="-webkit-mask-image: url(assets/logos/receitas.png); mask-image: url(assets/logos/receitas.png); --ratio: 1200/200; --h: 28px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="O POP" style="-webkit-mask-image: url(assets/logos/opop.png); mask-image: url(assets/logos/opop.png); --ratio: 556/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="MIS" style="-webkit-mask-image: url(assets/logos/mis.png); mask-image: url(assets/logos/mis.png); --ratio: 564/200; --h: 32px"></span></span>
-          <span class="logos__item"><span class="company-logo" role="img" aria-label="BR Media Group" style="-webkit-mask-image: url(assets/logos/br-media.png); mask-image: url(assets/logos/br-media.png); --ratio: 1312/200; --h: 26px"></span></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/zamp.svg" alt="Zamp" style="--ratio: 234/67; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/burger-king.png" alt="Burger King" style="--ratio: 184/200; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/popeyes.png" alt="Popeyes" style="--ratio: 780/200; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/trendx.png" alt="Trendx" style="--ratio: 900/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/goper.png" alt="Goper" style="--ratio: 887/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/omie.png" alt="Omie" style="--ratio: 594/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/tv-globo.svg" alt="TV Globo" style="--ratio: 96/71; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/ge.png" alt="ge" style="--ratio: 282/200; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/gshow.png" alt="gshow" style="--ratio: 608/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/receitas.png" alt="Receitas" style="--ratio: 1200/200; --h: 28px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/opop.png" alt="O POP" style="--ratio: 556/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/mis.png" alt="MIS" style="--ratio: 564/200; --h: 32px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/br-media.png" alt="BR Media Group" style="--ratio: 1312/200; --h: 26px" loading="lazy"></span>
         </div>
         <div class="logos__group" aria-hidden="true">
-          <span class="logos__item"><span class="company-logo" data-name="Zamp" style="-webkit-mask-image: url(assets/logos/zamp.svg); mask-image: url(assets/logos/zamp.svg); --ratio: 234/67; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="Burger King" style="-webkit-mask-image: url(assets/logos/burger-king.png); mask-image: url(assets/logos/burger-king.png); --ratio: 184/200; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="Popeyes" style="-webkit-mask-image: url(assets/logos/popeyes.png); mask-image: url(assets/logos/popeyes.png); --ratio: 780/200; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="Trendx" style="-webkit-mask-image: url(assets/logos/trendx.png); mask-image: url(assets/logos/trendx.png); --ratio: 900/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="Goper" style="-webkit-mask-image: url(assets/logos/goper.png); mask-image: url(assets/logos/goper.png); --ratio: 887/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="Omie" style="-webkit-mask-image: url(assets/logos/omie.png); mask-image: url(assets/logos/omie.png); --ratio: 594/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="TV Globo" style="-webkit-mask-image: url(assets/logos/tv-globo.svg); mask-image: url(assets/logos/tv-globo.svg); --ratio: 96/71; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="ge" style="-webkit-mask-image: url(assets/logos/ge.png); mask-image: url(assets/logos/ge.png); --ratio: 282/200; --h: 36px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="gshow" style="-webkit-mask-image: url(assets/logos/gshow.png); mask-image: url(assets/logos/gshow.png); --ratio: 608/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="Receitas" style="-webkit-mask-image: url(assets/logos/receitas.png); mask-image: url(assets/logos/receitas.png); --ratio: 1200/200; --h: 28px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="O POP" style="-webkit-mask-image: url(assets/logos/opop.png); mask-image: url(assets/logos/opop.png); --ratio: 556/200; --h: 34px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="MIS" style="-webkit-mask-image: url(assets/logos/mis.png); mask-image: url(assets/logos/mis.png); --ratio: 564/200; --h: 32px"></span></span>
-          <span class="logos__item"><span class="company-logo" data-name="BR Media Group" style="-webkit-mask-image: url(assets/logos/br-media.png); mask-image: url(assets/logos/br-media.png); --ratio: 1312/200; --h: 26px"></span></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/zamp.svg" alt="" style="--ratio: 234/67; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/burger-king.png" alt="" style="--ratio: 184/200; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/popeyes.png" alt="" style="--ratio: 780/200; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/trendx.png" alt="" style="--ratio: 900/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/goper.png" alt="" style="--ratio: 887/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/omie.png" alt="" style="--ratio: 594/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/tv-globo.svg" alt="" style="--ratio: 96/71; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/ge.png" alt="" style="--ratio: 282/200; --h: 36px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/gshow.png" alt="" style="--ratio: 608/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/receitas.png" alt="" style="--ratio: 1200/200; --h: 28px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/opop.png" alt="" style="--ratio: 556/200; --h: 34px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/mis.png" alt="" style="--ratio: 564/200; --h: 32px" loading="lazy"></span>
+          <span class="logos__item"><img class="company-logo" src="assets/logos/br-media.png" alt="" style="--ratio: 1312/200; --h: 26px" loading="lazy"></span>
         </div>
       </div>
       </div>
@@ -146,7 +160,7 @@
         </div>
         <div class="container reel__caption">
           <p class="reel__text" data-i18n="rest.phrase"><span class="highlight">Respira.</span> Bons produtos nascem de boas perguntas.</p>
-          <a class="btn btn--outline reel__btn" href="#projetos"><span data-i18n="rest.cta">ver projetos</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-down"/></svg></a>
+          <a class="btn btn--outline reel__btn" href="#projetos"><span data-i18n="rest.cta">ver projetos</span> <svg class="icon" aria-hidden="true"><use href="#arrow-down"/></svg></a>
         </div>
       </div>
     </section>
@@ -159,7 +173,7 @@
           <p class="overline" data-i18n="about.overline">Sobre</p>
           <h2 class="about-cv__title scrub-text" data-scrub data-i18n="about.title">Experiência em produtos que as pessoas usam todos os dias.</h2>
           <div class="about-cv__actions">
-            <a class="btn btn--primary" href="assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="about.cv">ver currículo completo</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+            <a class="btn btn--primary" href="assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="about.cv">ver currículo completo</span> <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
           </div>
         </div>
 
@@ -222,8 +236,8 @@
           <article class="project-card reveal" data-tilt>
             <div class="project-card__inner">
               <div class="project-card__top">
-                <span class="project-card__logo" role="img" aria-label="Burger King"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/burger-king.png); mask-image: url(assets/logos/burger-king.png); --ratio: 184/200; --h: 40px"></span></span>
-                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+                <span class="project-card__logo" role="img" aria-label="Burger King"><img class="company-logo" src="assets/logos/burger-king.png" alt="" style="--ratio: 184/200; --h: 40px" loading="lazy"></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="#arrow-up-right"/></svg></span>
               </div>
               <h3 class="project-card__title"><a class="project-card__link" href="projetos/burger-king-totem.html" data-i18n="card.bk.title">Um novo cardápio para o totem</a></h3>
               <div class="project-card__foot">
@@ -234,8 +248,8 @@
           <article class="project-card reveal" data-tilt>
             <div class="project-card__inner">
               <div class="project-card__top">
-                <span class="project-card__logo" role="img" aria-label="BR Media"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/br-media.png); mask-image: url(assets/logos/br-media.png); --ratio: 1312/200; --h: 14px"></span></span>
-                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+                <span class="project-card__logo" role="img" aria-label="BR Media"><img class="company-logo" src="assets/logos/br-media.png" alt="" style="--ratio: 1312/200; --h: 14px" loading="lazy"></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="#arrow-up-right"/></svg></span>
               </div>
               <h3 class="project-card__title"><a class="project-card__link" href="projetos/mis-comunidades.html" data-i18n="card.mis.title">Comunidades MIS</a></h3>
               <div class="project-card__foot">
@@ -246,8 +260,8 @@
           <article class="project-card reveal" data-tilt>
             <div class="project-card__inner">
               <div class="project-card__top">
-                <span class="project-card__logo" role="img" aria-label="GloboPop"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/opop.png); mask-image: url(assets/logos/opop.png); --ratio: 556/200; --h: 24px"></span></span>
-                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+                <span class="project-card__logo" role="img" aria-label="GloboPop"><img class="company-logo" src="assets/logos/opop.png" alt="" style="--ratio: 556/200; --h: 24px" loading="lazy"></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="#arrow-up-right"/></svg></span>
               </div>
               <h3 class="project-card__title"><a class="project-card__link" href="projetos/globopop-feed-anonimo.html" data-i18n="card.feed.title">Feed de degustação anônimo</a></h3>
               <div class="project-card__foot">
@@ -258,8 +272,8 @@
           <article class="project-card reveal" data-tilt>
             <div class="project-card__inner">
               <div class="project-card__top">
-                <span class="project-card__logo" role="img" aria-label="ge"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/ge.png); mask-image: url(assets/logos/ge.png); --ratio: 282/200; --h: 30px"></span></span>
-                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+                <span class="project-card__logo" role="img" aria-label="ge"><img class="company-logo" src="assets/logos/ge.png" alt="" style="--ratio: 282/200; --h: 30px" loading="lazy"></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="#arrow-up-right"/></svg></span>
               </div>
               <h3 class="project-card__title"><a class="project-card__link" href="projetos/ge-card-de-atleta.html" data-i18n="card.ge.title">Card de atleta & Você sabia?</a></h3>
               <div class="project-card__foot">
@@ -270,8 +284,8 @@
           <article class="project-card reveal" data-tilt>
             <div class="project-card__inner">
               <div class="project-card__top">
-                <span class="project-card__logo" role="img" aria-label="GloboPop"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/opop.png); mask-image: url(assets/logos/opop.png); --ratio: 556/200; --h: 24px"></span></span>
-                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+                <span class="project-card__logo" role="img" aria-label="GloboPop"><img class="company-logo" src="assets/logos/opop.png" alt="" style="--ratio: 556/200; --h: 24px" loading="lazy"></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="#arrow-up-right"/></svg></span>
               </div>
               <h3 class="project-card__title"><a class="project-card__link" href="projetos/globopop-novelinhas.html" data-i18n="card.novelinhas.title">Microdramas & Novelinhas</a></h3>
               <div class="project-card__foot">
@@ -282,8 +296,8 @@
           <article class="project-card reveal" data-tilt>
             <div class="project-card__inner">
               <div class="project-card__top">
-                <span class="project-card__logo" role="img" aria-label="Goper"><span class="company-logo" style="-webkit-mask-image: url(assets/logos/goper.png); mask-image: url(assets/logos/goper.png); --ratio: 887/200; --h: 18px"></span></span>
-                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#arrow-up-right"/></svg></span>
+                <span class="project-card__logo" role="img" aria-label="Goper"><img class="company-logo" src="assets/logos/goper.png" alt="" style="--ratio: 887/200; --h: 18px" loading="lazy"></span>
+                <span class="project-card__arrow" aria-hidden="true"><svg class="icon"><use href="#arrow-up-right"/></svg></span>
               </div>
               <h3 class="project-card__title"><a class="project-card__link" href="projetos/goper.html" data-i18n="card.goper.title">A academia que cabe na rotina</a></h3>
               <div class="project-card__foot">
@@ -387,8 +401,8 @@
             <div class="testi__controls">
               <div class="testi__dots"><button type="button" class="testi__dot is-active" aria-label="Depoimento 1" aria-controls="depoimento-1" aria-current="true"><span></span></button><button type="button" class="testi__dot" aria-label="Depoimento 2" aria-controls="depoimento-2"><span></span></button><button type="button" class="testi__dot" aria-label="Depoimento 3" aria-controls="depoimento-3"><span></span></button></div>
               <div class="testi__arrows">
-                <button type="button" class="icon-btn testi__prev" aria-label="Depoimento anterior"><svg class="icon" aria-hidden="true" style="rotate:180deg"><use href="assets/icons.svg#arrow-right"/></svg></button>
-                <button type="button" class="icon-btn testi__next" aria-label="Próximo depoimento"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+                <button type="button" class="icon-btn testi__prev" aria-label="Depoimento anterior"><svg class="icon" aria-hidden="true" style="rotate:180deg"><use href="#arrow-right"/></svg></button>
+                <button type="button" class="icon-btn testi__next" aria-label="Próximo depoimento"><svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button>
               </div>
             </div>
           </div>
@@ -421,9 +435,9 @@
           <li class="arc__item"><img src="images/galeria/foto-12.webp" alt="Time da Trendx no estande da feira" loading="lazy" draggable="false"></li>
         </ul>
         <div class="arc__controls">
-          <button type="button" class="icon-btn arc__prev" aria-label="Foto anterior"><svg class="icon" aria-hidden="true" style="rotate:180deg"><use href="assets/icons.svg#arrow-right"/></svg></button>
+          <button type="button" class="icon-btn arc__prev" aria-label="Foto anterior"><svg class="icon" aria-hidden="true" style="rotate:180deg"><use href="#arrow-right"/></svg></button>
           <div class="arc__dots"><button type="button" class="arc__dot" aria-label="Foto 1"></button><button type="button" class="arc__dot" aria-label="Foto 2"></button><button type="button" class="arc__dot" aria-label="Foto 3"></button><button type="button" class="arc__dot" aria-label="Foto 4"></button><button type="button" class="arc__dot" aria-label="Foto 5"></button><button type="button" class="arc__dot" aria-label="Foto 6"></button><button type="button" class="arc__dot" aria-label="Foto 7"></button><button type="button" class="arc__dot" aria-label="Foto 8"></button><button type="button" class="arc__dot" aria-label="Foto 9"></button><button type="button" class="arc__dot" aria-label="Foto 10"></button><button type="button" class="arc__dot" aria-label="Foto 11"></button><button type="button" class="arc__dot" aria-label="Foto 12"></button></div>
-          <button type="button" class="icon-btn arc__next" aria-label="Próxima foto"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+          <button type="button" class="icon-btn arc__next" aria-label="Próxima foto"><svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button>
         </div>
       </div>
     </section>
@@ -438,7 +452,7 @@
             <h2 class="cta-card__title" data-i18n="cta.title">E aí, bora trabalhar juntos?</h2>
             <p data-i18n="cta.text">Menos formalidade, mais conversa. Vamos marcar um papo sobre o seu produto ou a sua vaga.</p>
           </div>
-          <a class="btn btn--accent btn--l cta-card__btn" href="https://wa.me/5511966239797?text=Ol%C3%A1%20La%C3%ADs%2C%20vi%20seu%20portf%C3%B3lio!" target="_blank" rel="noopener"><span data-i18n="cta.btn">abrir WhatsApp</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chat"/></svg></a>
+          <a class="btn btn--accent btn--l cta-card__btn" href="https://wa.me/5511966239797?text=Ol%C3%A1%20La%C3%ADs%2C%20vi%20seu%20portf%C3%B3lio!" target="_blank" rel="noopener"><span data-i18n="cta.btn">abrir WhatsApp</span> <svg class="icon" aria-hidden="true"><use href="#chat"/></svg></a>
         </div>
         <p class="closing__phrase final-cta__phrase scrub-text" data-scrub data-i18n="cta.phrase">Design é sobre pessoas.<br> <span class="highlight">Cada pixel</span> tem um<br> <span class="brand">propósito</span>.</p>
       </div>
@@ -451,18 +465,18 @@
     <div class="container site-foot__inner">
       <img class="site-foot__logo" src="assets/logo-lockup.svg" alt="olaís design" width="160" height="90">
       <ul class="social">
-        <li><a class="link" href="https://www.linkedin.com/in/laisaaraujo/" target="_blank" rel="noopener">LinkedIn <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a></li>
-        <li><a class="link" href="mailto:olais.design@gmail.com">E-mail <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a></li>
-        <li><a class="link" href="assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="foot.cv">Currículo</span> <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a></li>
+        <li><a class="link" href="https://www.linkedin.com/in/laisaaraujo/" target="_blank" rel="noopener">LinkedIn <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a></li>
+        <li><a class="link" href="mailto:olais.design@gmail.com">E-mail <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a></li>
+        <li><a class="link" href="assets/curriculo-lais-araujo.pdf" target="_blank" rel="noopener"><span data-i18n="foot.cv">Currículo</span> <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a></li>
       </ul>
       <p class="caption text-tertiary">© <span data-year>2026</span> Laís Araujo · <span data-i18n="foot.note">feito com amor pela própria designer dona deste portfólio</span></p>
     </div>
   </footer>
 
-  <script src="i18n.js?v=48" defer></script>
-  <script src="logo-intro.js?v=48" defer></script>
-  <script src="scripts.js?v=48" defer></script>
-  <script src="fluid.js?v=48" defer></script>
-  <script src="nebula.js?v=48" defer></script>
+  <script src="i18n.js?v=49" defer></script>
+  <script src="logo-intro.js?v=49" defer></script>
+  <script src="scripts.js?v=49" defer></script>
+  <script src="fluid.js?v=49" defer></script>
+  <script src="nebula.js?v=49" defer></script>
 </body>
 </html>
