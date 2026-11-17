@@ -247,6 +247,7 @@ img.gallery__photo { padding: 0; }
   .cv--center .cv__item::before, .cv--center .cv__item:nth-child(even)::before { left: -36px; right: auto; }
   .cv--center .cv__period, .cv--center .cv__item:nth-child(odd) .cv__period, .cv--center .cv__item:nth-child(even) .cv__period { position: static; text-align: left; order: -1; }
   .js .cv--center .cv__item:nth-child(odd) > * { transform: translateX(24px); }
+  .js .cv--center .cv__item.is-in > * { transform: none; } /* sem isso, os itens ímpares ficavam deslocados no celular */
 }
 /* evita que conteúdo animado ou e-mail longo crie rolagem lateral no celular */
 #sobre { overflow-x: clip; }

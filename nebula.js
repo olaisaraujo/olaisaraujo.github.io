@@ -95,7 +95,7 @@
       starA = max(starA, a); starCol = mix(starCol, mix(cAccent, vec3(1.), core), a);
     }
 
-    float alpha = dotA * mix(.95, .8, uLight);
+    float alpha = dotA * mix(.95, .5, uLight); // tema claro: pontos mais suaves para o texto ler melhor
     vec3 outc = col * alpha;
     outc = outc * (1. - starA) + starCol * starA;
     alpha = max(alpha, starA);

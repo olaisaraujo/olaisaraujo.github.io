@@ -188,3 +188,9 @@ html.is-loading { overflow: hidden; }
 /* números com largura igual: o "1" não fica com espaço sobrando no contador */
 .number__value { font-variant-numeric: tabular-nums; }
 .roll__col > span { text-align: center; }
+
+/* celular: o círculo começa mais alto e maior, sem o vão escuro depois da faixa de empresas */
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .reel { height: 200vh; }
+  .reel__media { clip-path: circle(calc(26% + var(--p) * 60%) at 50% calc(30% + var(--p) * 20%)); }
+}

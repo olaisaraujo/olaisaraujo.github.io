@@ -146,27 +146,27 @@
   --color-surface-disabled: var(--neutral-100);
 
   --color-text-primary: var(--neutral-900);
-  --color-text-secondary: var(--neutral-600);
-  --color-text-tertiary: var(--neutral-400);
+  --color-text-secondary: var(--neutral-700); /* contraste: 13:1 */
+  --color-text-tertiary: var(--neutral-500); /* contraste: 5,3:1 (antes 3,4:1) */
   --color-text-disabled: var(--neutral-300);
   --color-text-inverse: var(--neutral-0);
   --color-text-brand: var(--purple-600);
-  --color-text-accent: var(--lime-700);
+  --color-text-accent: var(--purple-700); /* lima no fundo branco não tem contraste; roxo escuro tem 7:1 */
   --color-text-on-brand: var(--neutral-0);
   --color-text-on-accent: var(--neutral-1000);
 
-  --color-border-default: var(--neutral-200);
-  --color-border-subtle: var(--neutral-100);
+  --color-border-default: var(--neutral-300);
+  --color-border-subtle: var(--neutral-200);
   --color-border-strong: var(--neutral-900);
   --color-border-brand: var(--purple-500);
   --color-border-focus: var(--purple-600);
 
   --color-icon-primary: var(--neutral-900);
   --logo-filter: brightness(0); /* e pretos no tema claro */
-  --color-icon-secondary: var(--neutral-600);
+  --color-icon-secondary: var(--neutral-700);
   --color-icon-inverse: var(--neutral-0);
   --color-icon-brand: var(--purple-500);
-  --color-icon-accent: var(--lime-700);
+  --color-icon-accent: var(--purple-700);
   --color-icon-on-brand: var(--neutral-0);
 
   --color-feedback-success: var(--green-600);

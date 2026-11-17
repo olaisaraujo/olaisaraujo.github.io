@@ -47,7 +47,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- Logo (máscara: segue color/icon/primary) ---------- */
 .logo {
-  display: inline-block; width: 92px; height: auto; aspect-ratio: 110 / 55; vertical-align: middle;
+  display: inline-block; width: 121px; height: auto; aspect-ratio: 220 / 84; vertical-align: middle;
   filter: var(--logo-filter); /* o SVG é preto: no tema escuro fica branco */
 }
 
@@ -360,3 +360,4 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* estudos de caso bilíngues: evita "piscar" em português quando o idioma salvo é EN */
 .lang-en [data-lang-block="pt"] { display: none; }
 .lang-en [data-lang-block="en"][hidden] { display: block; }
+@media (max-width: 640px) { .logo { width: 100px; } }
