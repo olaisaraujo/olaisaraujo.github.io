@@ -194,3 +194,7 @@ html.is-loading { overflow: hidden; }
   .reel { height: 200vh; }
   .reel__media { clip-path: circle(calc(26% + var(--p) * 60%) at 50% calc(30% + var(--p) * 20%)); }
 }
+
+/* ---------- Captura da miniatura (Artifact): a home aparece pronta, sem abertura nem animação de entrada ---------- */
+.is-capture .preloader { display: none !important; }
+.is-capture .hero-in, .is-capture .split-word > span, .is-capture .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }

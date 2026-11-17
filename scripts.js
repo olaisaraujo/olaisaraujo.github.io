@@ -108,7 +108,8 @@
   const pre = document.querySelector('[data-preloader]');
   let seen = false; try { seen = sessionStorage.getItem('olais-intro') === '1'; } catch {}
   const svg = pre?.querySelector('.logo-intro__svg');
-  if (pre && svg && window.olaisLogoIntro && !reduce && !seen) {
+  const capture = root.classList.contains('is-capture'); // miniatura do Artifact: sem abertura
+  if (pre && svg && window.olaisLogoIntro && !reduce && !seen && !capture) {
     root.classList.add('is-loading');
     const end = () => {
       pre.classList.add('is-done'); root.classList.remove('is-loading');
