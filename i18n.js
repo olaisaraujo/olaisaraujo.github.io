@@ -78,16 +78,17 @@
     'about.title': 'Experience in products people use every day.',
     'about.cv': 'view full résumé',
     'cv.globopop.per': "01/2026 · present",
-    'cv.globopop.desc': "Launch of GloboPop: Communities (UGC), username from onboarding to profile and a Figma plugin that automates handoff.",
-    'cv.ge.desc': "AI in live broadcasts: “Did you know?” insights and real-time match summaries to keep viewers engaged.",
+    'cv.globopop.desc': "Helped launch GloboPop, Globo’s short-video app, with a feed for logged-out users, mini-series watched in episode order and a Figma plugin that automates handoff.",
+    'cv.ge.desc': "Designed AI experiences for live broadcasts, like “Did you know?” and real-time match summaries, to reduce drop-off and keep fans watching.",
+    'cv.ux.role': "Senior UX Designer",
     'cv.mis.role': "Senior Product Designer",
     'cv.mis.per': "08/2024 · 12/2024<br>04/2026 · 09/2026",
-    'cv.mis.desc': "Creator communities in the MIS app and brand management in SIC — already used by Pantene, Dove and Cetaphil.",
+    'cv.mis.desc': "Designed Communities, connecting brands and creators in the MIS app and the SIC dashboard: used by Dove, Pantene and Cetaphil, with 13% engagement, more than double the industry average.",
     'cv.omie.role': "Senior UX Designer Analyst",
-    'cv.omie.desc': "UX and CRO in Growth: a design system that cut landing page SLA by 40% and a sign-up flow with +100 bookings.",
+    'cv.omie.desc': "In Growth, built the design system that cut landing page delivery time by 40% and optimized the sign-up flow, generating around 100 extra bookings.",
     'cv.zamp.co': "Zamp · Burger King & Popeyes",
-    'cv.zamp.desc': "Self-service kiosks: +28% in sales, +9.1% average ticket and +15 p.p. transactional NPS.",
-    'cv.goper.desc': "Built the design area from scratch: UX/UI processes, user research, visual identity and design system.",
+    'cv.zamp.desc': "Led design and research for the new kiosk menu: +28% in sales, +9.1% average ticket and +15 p.p. transactional NPS.",
+    'cv.goper.desc': "First designer at the company, I built the design area from scratch: UX/UI processes, user research, visual identity and design system.",
   };
 
   // Rótulos para leitor de tela (aria-label): textos fixos e padrões numerados
