@@ -85,7 +85,7 @@
     'cv.mis.per': "08/2024 · 12/2024<br>04/2026 · 09/2026",
     'cv.mis.desc': "Designed Communities, connecting brands and creators in the MIS app and the SIC dashboard: used by Dove, Pantene and Cetaphil, with 13% engagement, more than double the industry average.",
     'cv.omie.role': "Senior UX Designer Analyst",
-    'cv.omie.desc': "In Growth, built the design system that cut landing page delivery time by 40% and optimized the sign-up flow, generating around 100 extra bookings.",
+    'cv.omie.desc': "In Growth, built the design system that cut landing page delivery time by 40% and optimized the sign-up flow, generating around 100 extra bookings in the period analyzed.",
     'cv.zamp.co': "Zamp · Burger King & Popeyes",
     'cv.zamp.desc': "Led design and research for the new kiosk menu: +28% in sales, +9.1% average ticket and +15 p.p. transactional NPS.",
     'cv.goper.desc': "First designer at the company, I built the design area from scratch: UX/UI processes, user research, visual identity and design system.",
