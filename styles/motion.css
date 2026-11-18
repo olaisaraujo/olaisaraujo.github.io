@@ -198,3 +198,10 @@ html.is-loading { overflow: hidden; }
 /* ---------- Captura da miniatura (Artifact): a home aparece pronta, sem abertura nem animação de entrada ---------- */
 .is-capture .preloader { display: none !important; }
 .is-capture .hero-in, .is-capture .split-word > span, .is-capture .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* cursor vira um círculo branco "Ampliar" sobre imagens e vídeos que abrem maiores */
+.cursor-ring { display: grid; place-items: center; }
+.cursor-ring__label { font: 600 15px/1 var(--font-family); letter-spacing: -0.01em; color: #0d0d0d; white-space: nowrap; opacity: 0; transform: scale(.6); transition: opacity .2s ease, transform .3s var(--ease-out); }
+.cursor-ring.is-expand { width: 104px; height: 104px; margin: -52px 0 0 -52px; background: #fff; border-color: transparent; box-shadow: 0 10px 30px rgb(0 0 0 / .3); }
+.cursor-ring.is-expand .cursor-ring__label { opacity: 1; transform: none; }
+.cursor-ring.is-expand.is-down { width: 92px; height: 92px; margin: -46px 0 0 -46px; }

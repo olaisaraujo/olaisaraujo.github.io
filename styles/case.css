@@ -138,6 +138,7 @@
   .cs-hero { padding-block: var(--spacing-12) var(--spacing-8); gap: var(--spacing-6); }
   .cs-card { flex-direction: column; align-items: stretch; padding: var(--spacing-6); }
   .cs-video { width: 100%; max-width: 240px; height: auto; aspect-ratio: 240 / 508; margin-inline: auto; }
+  .cs-zoom--video { width: 100%; max-width: 240px; margin-inline: auto; }
   .cs-front { padding: var(--spacing-6); gap: var(--spacing-8); }
   .cs-screens { gap: 12px; padding-inline: 0; }
   .cs-stats, .cs-metrics { gap: var(--spacing-8); }
@@ -188,17 +189,27 @@
 .cs-phone video { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; background: #14151a; }
 .cs-phone--framed { width: 176px; aspect-ratio: 176 / 366; border-radius: 30px; }
 .cs-phone--framed video { border: 3px solid #595c66; background: #000; }
-/* aviso "clique para ampliar": aparece ao passar o mouse; no celular fica sempre visível, menor */
+/* aviso para ampliar: no computador o próprio cursor vira um círculo "Ampliar" (fluid.js);
+   sem o cursor personalizado aparece um selo ao passar o mouse; no toque o selo fica sempre visível */
+.cs-zoom { position: relative; display: block; cursor: zoom-in; border-radius: var(--radius-md); }
+.cs-zoom--video { flex: none; width: fit-content; border-radius: var(--radius-md); }
+.cs-slide .cs-zoom { width: var(--w); }
+.cs-zoom > img, .cs-zoom > video { transition: filter .3s ease; }
+.cs-zoom:hover > img, .cs-zoom:hover > video { filter: brightness(.9); }
+.cs-zoom:focus-visible { outline: 2px solid var(--color-border-focus); outline-offset: 4px; }
+.has-cursor-ring [data-cs-expand], .has-cursor-ring [data-cs-expand] * { cursor: none; }
 .cs-phone::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(to top, rgb(0 0 0 / .65), rgb(0 0 0 / .15) 55%, transparent); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
 .cs-phone { transition: transform .35s var(--ease-out, ease); }
+.cs-phone:hover { transform: translateY(-6px); }
 .cs-phone__cta { position: absolute; z-index: 1; left: 50%; bottom: 14%; display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border-radius: 999px; background: #fff; color: #0d0d0d; font: 600 13px/1.2 var(--font-family); letter-spacing: -0.01em; white-space: nowrap; box-shadow: 0 8px 24px rgb(0 0 0 / .35); opacity: 0; transform: translate(-50%, 12px); transition: opacity .3s ease, transform .3s var(--ease-out, ease); pointer-events: none; }
+.cs-zoom .cs-phone__cta { bottom: 16px; }
 .cs-phone__cta .icon { width: 16px; height: 16px; flex: none; }
 .cs-phone__cta-touch { display: none; }
-.cs-phone:hover::after, .cs-phone:focus-visible::after { opacity: 1; }
-.cs-phone:hover .cs-phone__cta, .cs-phone:focus-visible .cs-phone__cta { opacity: 1; transform: translate(-50%, 0); }
-.cs-phone:hover { transform: translateY(-6px); }
+html:not(.has-cursor-ring) .cs-phone:hover::after, .cs-phone:focus-visible::after { opacity: 1; }
+html:not(.has-cursor-ring) [data-cs-expand]:hover .cs-phone__cta, [data-cs-expand]:focus-visible .cs-phone__cta { opacity: 1; transform: translate(-50%, 0); }
 @media (hover: none) {
   .cs-phone__cta { opacity: 1; transform: translate(-50%, 0); bottom: 5%; padding: 7px 12px; font-size: 12px; gap: 6px; background: rgb(255 255 255 / .92); }
+  .cs-zoom .cs-phone__cta { bottom: 10px; }
   .cs-phone__cta .icon { width: 13px; height: 13px; }
   .cs-phone__cta-hover { display: none; }
   .cs-phone__cta-touch { display: inline; }
@@ -210,6 +221,8 @@
 .cs-lightbox { padding: 0; border: 0; background: transparent; max-width: none; max-height: none; width: 100%; height: 100%; }
 .cs-lightbox::backdrop { background: rgb(0 0 0 / .85); }
 .cs-lightbox[open] { display: grid; place-items: center; }
+.cs-lightbox img { display: block; max-height: 86vh; max-width: 92vw; width: auto; height: auto; border-radius: var(--radius-md); }
+.cs-lightbox [hidden] { display: none !important; }
 .cs-lightbox video { display: block; height: min(86vh, 860px); width: auto; max-width: 92vw; border-radius: 16% / 7.7%; background: transparent; }
 .cs-lightbox__close { position: fixed; top: 20px; right: 20px; }
 

@@ -9,13 +9,17 @@
   if (finePointer && !reduce) {
     const ring = document.createElement('div');
     ring.className = 'cursor-ring'; ring.setAttribute('aria-hidden', 'true');
-    document.body.append(ring);
+    const label = document.createElement('span'); label.className = 'cursor-ring__label'; ring.append(label);
+    document.body.append(ring); root.classList.add('has-cursor-ring');
     let x = -100, y = -100, rx = x, ry = y, shown = false;
     addEventListener('pointermove', e => {
       x = e.clientX; y = e.clientY;
       if (!shown) { rx = x; ry = y; shown = true; ring.classList.add('is-on'); }
-      const t = e.target.closest?.('a, button, input, textarea, label, [role="button"]');
+      const zoom = e.target.closest?.('[data-cs-expand]');
+      const t = !zoom && e.target.closest?.('a, button, input, textarea, label, [role="button"]');
       ring.classList.toggle('is-hover', !!t);
+      if (zoom) label.textContent = root.classList.contains('lang-en') ? 'Expand' : 'Ampliar';
+      ring.classList.toggle('is-expand', !!zoom);
     }, { passive: true });
     addEventListener('pointerdown', () => ring.classList.add('is-down'));
     addEventListener('pointerup', () => ring.classList.remove('is-down'));

@@ -348,26 +348,42 @@
     track.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; x0 = e.clientX; s0 = track.scrollLeft; moved = false; track.classList.add('is-dragging'); });
     addEventListener('pointermove', e => { if (x0 == null) return; const dx = e.clientX - x0; if (Math.abs(dx) > 3) moved = true; track.scrollLeft = s0 - dx; });
     addEventListener('pointerup', () => { if (x0 == null) return; x0 = null; track.classList.remove('is-dragging'); });
-    track.addEventListener('click', e => { if (moved) e.preventDefault(); }, true);
+    track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true); // arrastar não abre a foto
     sync();
   });
-  /* ---------- Case: telas em vídeo que ampliam ao clicar ---------- */
-  const phones = document.querySelectorAll('[data-cs-expand]');
-  if (phones.length) {
-    if (reduce) document.querySelectorAll('.cs video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+  /* ---------- Case: imagens e vídeos que ampliam ao clicar ---------- */
+  const expandables = document.querySelectorAll('[data-cs-expand]');
+  if (expandables.length) {
     const en = () => document.documentElement.classList.contains('lang-en');
+    if (reduce) document.querySelectorAll('.cs video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
+    const icon = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
+    // imagens e vídeos soltos (case do BK): ganham uma moldura com o aviso para toque e viram botão para o teclado
+    expandables.forEach(el => {
+      if (!el.matches('img, video')) return;
+      const wrap = document.createElement('span'); wrap.className = 'cs-zoom' + (el.classList.contains('cs-video') ? ' cs-zoom--video' : '');
+      el.before(wrap); wrap.append(el);
+      wrap.insertAdjacentHTML('beforeend', `<span class="cs-phone__cta" aria-hidden="true">${icon}<span class="cs-phone__cta-hover">${el.closest('[lang="en"]') ? 'click to expand' : 'clique para ampliar'}</span><span class="cs-phone__cta-touch">${el.closest('[lang="en"]') ? 'tap to expand' : 'toque para ampliar'}</span></span>`);
+      wrap.dataset.csExpand = ''; el.removeAttribute('data-cs-expand');
+      wrap.tabIndex = 0; wrap.setAttribute('role', 'button');
+      const what = el.getAttribute('alt') || el.getAttribute('aria-label') || '';
+      wrap.setAttribute('aria-label', (el.closest('[lang="en"]') ? 'Expand: ' : 'Ampliar: ') + what);
+      wrap.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); wrap.click(); } });
+    });
     const box = document.createElement('dialog'); box.className = 'cs-lightbox';
-    box.innerHTML = '<video muted loop playsinline controls></video><button type="button" class="icon-btn cs-lightbox__close"><svg class="icon" aria-hidden="true" style="rotate:45deg"><use href="#plus"/></svg></button>';
+    box.innerHTML = '<video muted loop playsinline controls hidden></video><img alt="" hidden><button type="button" class="icon-btn cs-lightbox__close"><svg class="icon" aria-hidden="true" style="rotate:45deg"><use href="#plus"/></svg></button>';
     document.body.append(box);
-    const big = box.querySelector('video'), close = box.querySelector('button');
-    phones.forEach(b => b.addEventListener('click', () => {
-      const v = b.querySelector('video');
-      big.src = v.currentSrc || v.src; big.poster = v.poster; big.setAttribute('aria-label', b.getAttribute('aria-label') || '');
-      close.setAttribute('aria-label', en() ? 'Close video' : 'Fechar vídeo');
-      box.showModal(); if (!reduce) big.play().catch(() => {});
+    const bigV = box.querySelector('video'), bigI = box.querySelector('img'), close = box.querySelector('button');
+    document.querySelectorAll('[data-cs-expand]').forEach(b => b.addEventListener('click', e => {
+      const m = b.querySelector('video, img'); if (!m) return;
+      const isV = m.tagName === 'VIDEO';
+      bigV.hidden = !isV; bigI.hidden = isV;
+      if (isV) { bigV.src = m.currentSrc || m.src; bigV.poster = m.poster || ''; bigV.setAttribute('aria-label', b.getAttribute('aria-label') || ''); }
+      else { bigI.src = m.currentSrc || m.src; bigI.alt = m.alt || ''; }
+      close.setAttribute('aria-label', en() ? 'Close' : 'Fechar');
+      box.showModal(); if (isV && !reduce) bigV.play().catch(() => {});
     }));
     close.addEventListener('click', () => box.close());
     box.addEventListener('click', e => { if (e.target === box) box.close(); });
-    box.addEventListener('close', () => { big.pause(); big.removeAttribute('src'); big.load(); });
+    box.addEventListener('close', () => { bigV.pause(); bigV.removeAttribute('src'); bigV.load(); bigI.removeAttribute('src'); });
   }
 })();

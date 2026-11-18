@@ -59,7 +59,7 @@
     'card.bk.tag0': "Self-service",
     'card.bk.tag1': "Research",
     'card.bk.tag2': "Retail",
-    'card.bk.title': "A new menu for the kiosk",
+    'card.bk.title': "A new menu for the self-service kiosk",
     'card.bk.desc': "Card sorting and a linear flow that cut 10s per order and raised the average ticket by 9.1%.",
     'card.mis.title': "MIS Communities",
     'card.mis.desc': "A feature built from scratch for brands and creators: +519% engagement in Dove’s community.",
