@@ -199,9 +199,13 @@ html.is-loading { overflow: hidden; }
 .is-capture .preloader { display: none !important; }
 .is-capture .hero-in, .is-capture .split-word > span, .is-capture .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 
-/* cursor vira um círculo branco "Ampliar" sobre imagens e vídeos que abrem maiores */
+/* cursor vira o selo da marca sobre imagens e vídeos que abrem maiores:
+   círculo roxo, estrela lima e "ampliar" em Unbounded */
 .cursor-ring { display: grid; place-items: center; }
-.cursor-ring__label { font: 600 15px/1 var(--font-family); letter-spacing: -0.01em; color: #0d0d0d; white-space: nowrap; opacity: 0; transform: scale(.6); transition: opacity .2s ease, transform .3s var(--ease-out); }
-.cursor-ring.is-expand { width: 104px; height: 104px; margin: -52px 0 0 -52px; background: #fff; border-color: transparent; box-shadow: 0 10px 30px rgb(0 0 0 / .3); }
+.cursor-ring__label { display: grid; justify-items: center; gap: 6px; font: 900 13px/1 var(--font-brand); letter-spacing: -0.01em; color: var(--lime-400); white-space: nowrap; opacity: 0; transform: scale(.6); transition: opacity .2s ease, transform .35s var(--ease-out); }
+.cursor-ring__star { width: 16px; height: 16px; fill: var(--lime-400); }
+.cursor-ring.is-expand { width: 112px; height: 112px; margin: -56px 0 0 -56px; background: var(--purple-500); border: 2px solid var(--lime-400); box-shadow: 0 0 0 6px rgb(151 71 255 / .18), 0 12px 32px rgb(151 71 255 / .45); }
 .cursor-ring.is-expand .cursor-ring__label { opacity: 1; transform: none; }
-.cursor-ring.is-expand.is-down { width: 92px; height: 92px; margin: -46px 0 0 -46px; }
+.cursor-ring.is-expand .cursor-ring__star { animation: cursor-star 4s linear infinite; }
+.cursor-ring.is-expand.is-down { width: 98px; height: 98px; margin: -49px 0 0 -49px; }
+@keyframes cursor-star { to { transform: rotate(360deg); } }

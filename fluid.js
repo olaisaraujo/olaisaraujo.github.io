@@ -9,7 +9,9 @@
   if (finePointer && !reduce) {
     const ring = document.createElement('div');
     ring.className = 'cursor-ring'; ring.setAttribute('aria-hidden', 'true');
-    const label = document.createElement('span'); label.className = 'cursor-ring__label'; ring.append(label);
+    const label = document.createElement('span'); label.className = 'cursor-ring__label';
+    label.innerHTML = '<svg class="cursor-ring__star" viewBox="0 0 34 34"><path d="M17 0c1.2 9.6 7.4 15.8 17 17-9.6 1.2-15.8 7.4-17 17-1.2-9.6-7.4-15.8-17-17C9.6 15.8 15.8 9.6 17 0z"/></svg><span></span>';
+    ring.append(label);
     document.body.append(ring); root.classList.add('has-cursor-ring');
     let x = -100, y = -100, rx = x, ry = y, shown = false;
     addEventListener('pointermove', e => {
@@ -18,7 +20,7 @@
       const zoom = e.target.closest?.('[data-cs-expand]');
       const t = !zoom && e.target.closest?.('a, button, input, textarea, label, [role="button"]');
       ring.classList.toggle('is-hover', !!t);
-      if (zoom) label.textContent = root.classList.contains('lang-en') ? 'Expand' : 'Ampliar';
+      if (zoom) label.lastChild.textContent = root.classList.contains('lang-en') ? 'expand' : 'ampliar';
       ring.classList.toggle('is-expand', !!zoom);
     }, { passive: true });
     addEventListener('pointerdown', () => ring.classList.add('is-down'));
