@@ -19,6 +19,8 @@
 
   --lilac-400: #B993D6; --sky-400: #8CA6DB; --mint-200: #BDFFF3;
   --green-400: #4ADE80; --green-600: #16A34A; --amber-400: #FBBF24; --amber-600: #D97706; --red-400: #F87171; --red-600: #DC2626;
+  --red-100: #FEE2E2; --red-300: #FCA5A5; --red-500: #EF4444; --red-700: #B91C1C;
+  --orange-100: #FFEDD5; --orange-300: #FDBA74; --orange-400: #FB923C; --orange-500: #F97316; --orange-800: #9A3412;
 
   --alpha-white-5: rgb(255 255 255 / 0.05); --alpha-white-10: rgb(255 255 255 / 0.10); --alpha-white-20: rgb(255 255 255 / 0.20);
   --alpha-black-5: rgb(0 0 0 / 0.05); --alpha-black-10: rgb(0 0 0 / 0.10); --alpha-black-30: rgb(0 0 0 / 0.30); --alpha-black-60: rgb(0 0 0 / 0.60);
@@ -123,6 +125,8 @@
   --color-tag-brand-bg: rgb(151 71 255 / .18); --color-tag-brand-fg: var(--purple-200); --color-tag-brand-dot: var(--purple-400);
   --color-tag-accent-bg: rgb(189 234 60 / .13); --color-tag-accent-fg: var(--lime-300); --color-tag-accent-dot: var(--lime-400);
   --color-tag-neutral-bg: rgb(255 255 255 / .07); --color-tag-neutral-fg: var(--neutral-300);
+  --color-tag-danger-bg: rgb(239 68 68 / .16); --color-tag-danger-fg: var(--red-300); --color-tag-danger-dot: var(--red-400);
+  --color-tag-warning-bg: rgb(249 115 22 / .16); --color-tag-warning-fg: var(--orange-300); --color-tag-warning-dot: var(--orange-400);
 
   --color-feedback-success: var(--green-400);
   --color-feedback-warning: var(--amber-400);
@@ -177,6 +181,8 @@
   --color-tag-brand-bg: var(--purple-50); --color-tag-brand-fg: var(--purple-700); --color-tag-brand-dot: var(--purple-500);
   --color-tag-accent-bg: var(--lime-100); --color-tag-accent-fg: var(--lime-800); --color-tag-accent-dot: var(--lime-600);
   --color-tag-neutral-bg: rgb(0 0 0 / .06); --color-tag-neutral-fg: var(--neutral-600);
+  --color-tag-danger-bg: var(--red-100); --color-tag-danger-fg: var(--red-700); --color-tag-danger-dot: var(--red-500);
+  --color-tag-warning-bg: var(--orange-100); --color-tag-warning-fg: var(--orange-800); --color-tag-warning-dot: var(--orange-500);
 
   --color-feedback-success: var(--green-600);
   --color-feedback-warning: var(--amber-600);

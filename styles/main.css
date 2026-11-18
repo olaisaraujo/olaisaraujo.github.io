@@ -94,13 +94,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: inline-flex; align-items: center; gap: var(--spacing-1); padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-xs); border: 0;
   background: var(--tag-bg); color: var(--tag-fg); font: 600 12px/1.35 var(--font-family); letter-spacing: .01em; white-space: nowrap; cursor: default;
 }
-.tag--brand::before, .tag--accent::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--tag-dot); flex: none; }
+.tag--brand::before, .tag--accent::before, .tag--danger::before, .tag--warning::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--tag-dot); flex: none; }
 .tag--brand  { --tag-bg: var(--color-tag-brand-bg); --tag-fg: var(--color-tag-brand-fg); --tag-dot: var(--color-tag-brand-dot); }
 .tag--accent { --tag-bg: var(--color-tag-accent-bg); --tag-fg: var(--color-tag-accent-fg); --tag-dot: var(--color-tag-accent-dot); }
+.tag--danger  { --tag-bg: var(--color-tag-danger-bg); --tag-fg: var(--color-tag-danger-fg); --tag-dot: var(--color-tag-danger-dot); }
+.tag--warning { --tag-bg: var(--color-tag-warning-bg); --tag-fg: var(--color-tag-warning-fg); --tag-dot: var(--color-tag-warning-dot); }
 /* cards de projeto são sempre claros: usam os valores do tema claro */
 .project-card .tag { --tag-bg: rgb(0 0 0 / .06); --tag-fg: var(--neutral-600); }
 .project-card .tag--brand { --tag-bg: var(--purple-50); --tag-fg: var(--purple-700); --tag-dot: var(--purple-500); }
 .project-card .tag--accent { --tag-bg: var(--lime-100); --tag-fg: var(--lime-800); --tag-dot: var(--lime-600); }
+.project-card .tag--danger  { --tag-bg: var(--red-100); --tag-fg: var(--red-700); --tag-dot: var(--red-500); }
+.project-card .tag--warning { --tag-bg: var(--orange-100); --tag-fg: var(--orange-800); --tag-dot: var(--orange-500); }
 .tag-list { display: flex; flex-wrap: wrap; gap: var(--spacing-2); list-style: none; padding: 0; }
 
 /* ---------- Link ---------- */
