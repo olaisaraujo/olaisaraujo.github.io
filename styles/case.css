@@ -12,7 +12,6 @@
 .cs-hero > * { min-width: 0; }
 .cs-back { display: inline-flex; align-items: center; gap: var(--spacing-2); width: fit-content; font: var(--text-label-m); letter-spacing: -0.015em; color: var(--color-text-primary); }
 .cs-back .icon { width: 24px; height: 24px; }
-.cs-hero .tag { border-radius: var(--radius-sm); }
 .cs-title { font: 900 clamp(30px, 3.1vw, 44px)/1.12 var(--font-brand); letter-spacing: -0.025em; max-width: 1000px; overflow-wrap: break-word; }
 .cs-lead { font: var(--text-body-l); letter-spacing: -0.005em; color: var(--color-text-secondary); max-width: 760px; }
 .cs-meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--spacing-6); padding-block: var(--spacing-8); border-block: 1px solid var(--color-border-subtle); margin: 0; }

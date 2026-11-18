@@ -86,11 +86,23 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .icon-btn--brand:hover { background: var(--color-surface-brand-hover); color: var(--color-icon-on-brand); }
 
 /* ---------- Tag ---------- */
-.tag { display: inline-flex; align-items: center; padding: var(--spacing-2) var(--spacing-4); border-radius: var(--radius-full); font: var(--text-label-s); letter-spacing: -0.01em; white-space: nowrap; }
-.tag--brand { background: var(--color-surface-brand); color: var(--color-text-on-brand); }
-.tag--accent { background: var(--color-surface-accent); color: var(--color-text-on-accent); }
-.tag--neutral { background: var(--color-surface-neutral); color: var(--color-text-primary); }
-.tag--outline { border: 1px solid var(--color-border-default); color: var(--color-text-primary); }
+/* Tag = etiqueta informativa, não é clicável. Para não parecer botão:
+   cantos retos (6px, botões são cápsulas), texto pequeno, fundo suave translúcido
+   em vez de cor cheia, ponto colorido de categoria e nenhum efeito de hover. */
+.tag {
+  --tag-bg: rgb(255 255 255 / .07); --tag-fg: var(--neutral-300); --tag-dot: transparent;
+  display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 6px; border: 0;
+  background: var(--tag-bg); color: var(--tag-fg); font: 600 12px/1.35 var(--font-family); letter-spacing: .01em; white-space: nowrap; cursor: default;
+}
+.tag--brand, .tag--accent { padding-left: 9px; }
+.tag--brand::before, .tag--accent::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--tag-dot); flex: none; }
+.tag--brand  { --tag-bg: rgb(151 71 255 / .18); --tag-fg: var(--purple-200); --tag-dot: var(--purple-400); }
+.tag--accent { --tag-bg: rgb(189 234 60 / .13); --tag-fg: var(--lime-300); --tag-dot: var(--lime-400); }
+.tag--neutral, .tag--outline { --tag-bg: rgb(255 255 255 / .07); --tag-fg: var(--neutral-300); }
+/* fundo claro (tema claro e cards de projeto, que são sempre claros) */
+:root[data-theme="light"] .tag, .project-card .tag { --tag-bg: rgb(0 0 0 / .06); --tag-fg: var(--neutral-600); }
+:root[data-theme="light"] .tag--brand, .project-card .tag--brand { --tag-bg: var(--purple-50); --tag-fg: var(--purple-700); --tag-dot: var(--purple-500); }
+:root[data-theme="light"] .tag--accent, .project-card .tag--accent { --tag-bg: var(--lime-100); --tag-fg: var(--lime-800); --tag-dot: var(--lime-600); }
 .tag-list { display: flex; flex-wrap: wrap; gap: var(--spacing-2); list-style: none; padding: 0; }
 
 /* ---------- Link ---------- */
@@ -202,8 +214,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   overflow-wrap: break-word; transition: color .45s ease;
 }
 .project-card__foot { margin-top: auto; display: grid; gap: var(--spacing-5); }
-.project-card .tag { padding: 6px 14px; }
-.project-card .tag--outline { border-color: var(--card-line); color: var(--card-mute); background: transparent; }
 .project-card__cta { display: inline-flex; align-items: center; gap: var(--spacing-2); font: var(--text-overline); letter-spacing: .14em; text-transform: uppercase; color: var(--card-ink); transition: color .45s ease; }
 .project-card__cta > span { position: relative; }
 .project-card__cta > span::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease-out, ease); }
