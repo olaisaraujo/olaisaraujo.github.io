@@ -189,13 +189,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .project-card__inner {
   position: relative; display: flex; flex-direction: column; gap: var(--spacing-6); width: 100%;
   padding: clamp(24px, 2.4vw, 36px); border-radius: 32px; background: var(--card-bg);
-  overflow: hidden; aspect-ratio: 5 / 6; isolation: isolate;
+  /* sem overflow: hidden, o card cresce se o conteúdo passar da proporção 5:6 (nunca corta as tags) */
+  aspect-ratio: 5 / 6; isolation: isolate;
   box-shadow: 0 18px 40px -18px rgb(0 0 0 / .45);
   transition: background-color .45s ease, box-shadow .5s ease;
 }
 /* brilho roxo que acompanha o mouse dentro do card (scripts.js → --mx / --my) */
 .project-card__inner::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0;
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; border-radius: inherit;
   background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), rgb(151 71 255 / .22), transparent 70%);
   transition: opacity .4s ease;
 }
