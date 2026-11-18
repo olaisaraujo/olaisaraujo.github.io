@@ -351,4 +351,23 @@
     track.addEventListener('click', e => { if (moved) e.preventDefault(); }, true);
     sync();
   });
+  /* ---------- Case: telas em vídeo que ampliam ao clicar ---------- */
+  const phones = document.querySelectorAll('[data-cs-expand]');
+  if (phones.length) {
+    if (reduce) document.querySelectorAll('.cs video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+    const en = () => document.documentElement.classList.contains('lang-en');
+    const box = document.createElement('dialog'); box.className = 'cs-lightbox';
+    box.innerHTML = '<video muted loop playsinline controls></video><button type="button" class="icon-btn cs-lightbox__close"><svg class="icon" aria-hidden="true" style="rotate:45deg"><use href="#plus"/></svg></button>';
+    document.body.append(box);
+    const big = box.querySelector('video'), close = box.querySelector('button');
+    phones.forEach(b => b.addEventListener('click', () => {
+      const v = b.querySelector('video');
+      big.src = v.currentSrc || v.src; big.poster = v.poster; big.setAttribute('aria-label', b.getAttribute('aria-label') || '');
+      close.setAttribute('aria-label', en() ? 'Close video' : 'Fechar vídeo');
+      box.showModal(); if (!reduce) big.play().catch(() => {});
+    }));
+    close.addEventListener('click', () => box.close());
+    box.addEventListener('click', e => { if (e.target === box) box.close(); });
+    box.addEventListener('close', () => { big.pause(); big.removeAttribute('src'); big.load(); });
+  }
 })();
