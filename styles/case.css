@@ -341,3 +341,149 @@ html:not(.has-cursor-ring) [data-cs-expand]:hover .cs-phone__cta, [data-cs-expan
   .cs-cols__title { min-height: 0; }
 }
 @container cs-sections (max-width: 380px) { .cs-cols { --cols: 1; } }
+
+/* ==========================================================================
+   Blocos dos cases "ge · Tempo Real" (Figma 362:1098) e "GloboPop · Novelinhas" (Figma 349:31494)
+   ========================================================================== */
+.cs { --cs-dash: rgb(255 255 255 / .22); --cs-tile: rgb(255 255 255 / .04); --cs-tile-2: #1f2126; }
+:root[data-theme="light"] .cs { --cs-dash: rgb(0 0 0 / .2); --cs-tile: var(--neutral-0); --cs-tile-2: var(--neutral-0); }
+.cs-group--8 { gap: var(--spacing-2); }
+.cs-sub--s { font-size: 20px; line-height: 1.4; }
+.cs-kicker--muted { color: var(--color-text-tertiary); }
+.cs-accent { color: var(--color-text-accent); }
+.cs-ast { color: var(--color-text-tertiary); font-weight: 400; }
+.cs-stat-line { font: 700 22px/1.4 var(--font-family); letter-spacing: -0.01em; color: var(--color-text-accent); }
+.cs-highlight--duo { display: grid; gap: var(--spacing-2); }
+.cs-highlight--duo p { margin: 0; }
+
+/* métricas em 2 colunas */
+.cs-metrics--2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-8) var(--spacing-12); }
+.cs-metrics--2 .cs-metric__label strong { font-weight: 700; color: var(--color-text-primary); }
+
+/* capa do ge: texto + três telas com status */
+.cs-cover { display: grid; grid-template-columns: minmax(0, 385px) minmax(0, 1fr); align-items: center; gap: var(--spacing-12); padding: 56px 56px 64px; border-radius: 24px; background: var(--cs-panel); }
+.cs-cover__text { display: grid; gap: var(--spacing-4); }
+.cs-cover__title { font: 600 32px/1.25 var(--font-family); letter-spacing: -0.015em; color: var(--color-text-primary); }
+.cs-cover__shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--spacing-4); }
+.cs-shot { display: grid; justify-items: center; align-content: start; gap: 10px; margin: 0; min-width: 0; }
+.cs-shot__label { font: 600 13px/1.3 var(--font-family); color: var(--color-text-secondary); text-align: center; }
+.cs-shot .cs-zoom { width: 100%; max-width: 240px; margin-top: 6px; border-radius: 14% / 7%; }
+.cs-shot img { display: block; width: 100%; height: auto; }
+
+/* figura com moldura tracejada (imagem + legenda) */
+.cs-fig { display: grid; gap: 12px; margin: 0; min-width: 0; }
+.cs-fig__box { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--spacing-10); padding: 40px; border: 1px dashed var(--cs-dash); border-radius: 24px; background: var(--cs-panel); min-width: 0; }
+.cs-fig__box--stack { display: grid; justify-content: stretch; align-items: start; gap: var(--spacing-4); padding: 40px 48px 48px; }
+.cs-fig__box--stack > .cs-lead-m { margin-bottom: var(--spacing-4); }
+.cs-fig__item { display: block; flex: 0 1 auto; width: var(--w, 100%); max-width: 100%; min-width: 0; }
+.cs-fig__item img { display: block; width: 100%; height: auto; }
+.cs-fig__box--duo { flex-wrap: nowrap; }
+.cs-fig__box--duo > .cs-fig__item:first-child { flex: 0 1 30%; }
+.cs-fig__box--duo > .cs-fig__item:last-child { flex: 0 1 60%; }
+
+/* handoff em grade 2x2 */
+.cs-handoff { list-style: none; padding: 0; margin: var(--spacing-2) 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-8) var(--spacing-6); }
+.cs-handoff__item { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.cs-handoff__item .cs-zoom { border-radius: 12px; overflow: hidden; }
+.cs-handoff__item img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.cs-handoff__item .cs-caption { color: var(--color-text-secondary); }
+.cs-handoff--tiles { margin: 0; gap: var(--spacing-6); }
+.cs-handoff--tiles .cs-handoff__item { padding: 0 0 16px; gap: 14px; border-radius: 16px; background: var(--cs-tile); border: 1px solid var(--cs-panel-line); overflow: hidden; }
+.cs-handoff--tiles .cs-handoff__item .cs-zoom, .cs-handoff--tiles .cs-handoff__item img { border-radius: 0; }
+.cs-handoff--tiles .cs-caption { padding-inline: 16px; }
+
+/* fluxo da IA em quatro passos */
+.cs-flow { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--spacing-4); counter-reset: flow; }
+.cs-flow li { display: grid; gap: 6px; align-content: start; padding: 16px 16px 4px; border-top: 2px solid var(--color-border-brand); position: relative; }
+.cs-flow li::before { content: ""; position: absolute; top: -7px; left: 16px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-border-brand); }
+.cs-flow__step { font: var(--text-overline); letter-spacing: var(--tracking-overline); text-transform: uppercase; color: var(--color-text-tertiary); }
+.cs-flow__kind { font: 600 14px/1.4 var(--font-family); color: var(--color-text-accent); }
+.cs-flow__title { font: 600 18px/1.4 var(--font-family); color: var(--color-text-primary); }
+
+/* exemplo do dado à curiosidade */
+.cs-example { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--spacing-4); }
+.cs-example__card { display: grid; gap: 12px; align-content: start; padding: var(--spacing-6); border-radius: 16px; background: var(--cs-tile-2); border: 1px solid var(--cs-panel-line); min-width: 0; }
+.cs-example__n { font: 900 28px/1.2 var(--font-brand); color: var(--color-text-accent); }
+.cs-example__title { font: 600 18px/1.3 var(--font-family); color: var(--color-text-primary); }
+.cs-example__desc { font: 400 14px/1.45 var(--font-family); color: var(--color-text-secondary); }
+.cs-example__big { font: 900 48px/1.1 var(--font-brand); letter-spacing: -0.02em; color: var(--color-text-accent); }
+.cs-example__name { font: 700 22px/1.3 var(--font-family); color: var(--color-text-primary); }
+.cs-example__headline { font: 600 14px/1.4 var(--font-family); color: var(--color-text-primary); }
+.cs-example__quote { font: 700 18px/1.45 var(--font-family); color: var(--color-text-primary); }
+.cs-example .cs-zoom { border-radius: 10px; overflow: hidden; }
+.cs-example img { display: block; width: 100%; height: auto; border-radius: 10px; }
+
+/* cartões simples (conceito, benchmark, princípios, cenários) */
+.cs-tiles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--spacing-4); }
+.cs-tiles--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cs-tile { display: grid; gap: 10px; align-content: start; padding: var(--spacing-6); border-radius: 16px; background: var(--cs-tile); border: 1px solid var(--cs-panel-line); min-width: 0; }
+.cs-tile__n { font: 600 14px/1.2 var(--font-family); color: var(--color-text-accent); }
+.cs-tile__title { font: 600 20px/1.4 var(--font-family); color: var(--color-text-accent); }
+.cs-tiles--principles .cs-tile__title { color: var(--color-text-primary); }
+.cs-tile__text { font: 400 16px/1.5 var(--font-family); color: var(--color-text-secondary); }
+.cs-tile .cs-bar__ref { margin-top: 2px; }
+
+/* selos: apps do benchmark e etapas da jornada */
+.cs-pills { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 12px; }
+.cs-pills li { display: inline-flex; align-items: center; gap: 10px; padding: 9px 18px 9px 14px; border-radius: 999px; border: 1px solid var(--cs-panel-line); background: var(--cs-tile); font: 600 15px/1.3 var(--font-family); color: var(--color-text-primary); }
+.cs-pills img { width: 24px; height: 24px; object-fit: contain; }
+.cs-pills--steps li { padding: 7px 16px; gap: 8px; font-size: 14px; }
+.cs-pills--steps span { font-size: 12px; color: var(--color-text-accent); }
+.cs-legend { display: inline-flex; align-items: center; gap: 10px; font: 600 16px/1.3 var(--font-family); color: var(--color-text-primary); }
+.cs-legend img { width: 24px; height: 24px; border-radius: 6px; flex: none; }
+.cs-tile .cs-legend { font-size: 18px; }
+.cs-tile .cs-legend img { width: 32px; height: 32px; border-radius: 8px; }
+
+/* painel de ponto de contato: funcionalidades + comparativo GloboPop x Globoplay */
+.cs-touch { gap: var(--spacing-10); }
+.cs-cols--2 { --cols: 2; }
+.cs-cols--3 { --cols: 3; }
+.cs-cols--4 { --cols: 4; }
+.cs-touch .cs-cols__title { min-height: 0; font-size: 18px; }
+.cs-compare { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-6); }
+.cs-compare--wide { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+.cs-compare__card { display: grid; justify-items: center; align-content: start; gap: 20px; padding: 32px 24px; border-radius: 16px; background: var(--cs-tile); border: 1px solid var(--cs-panel-line); min-width: 0; text-align: center; }
+.cs-compare__shots { display: flex; justify-content: center; width: 100%; min-width: 0; }
+.cs-compare__text { font: 400 14px/1.5 var(--font-family); color: var(--color-text-secondary); max-width: 340px; }
+
+/* gráfico com título em cima e painel texto + tela */
+.cs-panel__row--center { align-items: center; }
+.cs-chart { display: grid; gap: 12px; margin: 0; justify-items: start; }
+.cs-chart .cs-fig__item img, .cs-panel__row .cs-fig__item img { border-radius: 16px; }
+
+@media (max-width: 1100px) {
+  .cs-cover { grid-template-columns: minmax(0, 1fr); padding: 48px 40px; }
+}
+@media (max-width: 760px) {
+  .cs-cover { padding: 32px 20px 28px; gap: var(--spacing-8); border-radius: 20px; }
+  .cs-cover__title { font-size: 24px; }
+  .cs-cover__shots { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: -20px; padding-inline: 20px; scrollbar-width: none; }
+  .cs-cover__shots::-webkit-scrollbar { display: none; }
+  .cs-shot { flex: 0 0 62%; scroll-snap-align: center; }
+  .cs-fig__box { padding: 24px 16px; gap: var(--spacing-6); border-radius: 20px; }
+  .cs-fig__box--stack { padding: 24px 20px 28px; }
+  .cs-fig__box--duo { flex-wrap: wrap; }
+  .cs-fig__box--duo > .cs-fig__item:first-child { flex-basis: 60%; }
+  .cs-fig__box--duo > .cs-fig__item:last-child { flex-basis: 100%; }
+  .cs-stat-line { font-size: 19px; }
+}
+
+/* encaixe pelo espaço disponível (notebooks, tablets e celulares) */
+@container cs-sections (max-width: 820px) {
+  .cs-cols--4 { --cols: 2; }
+  .cs-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--spacing-8); }
+  .cs-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cs-example { grid-template-columns: minmax(0, 1fr); }
+  .cs-example__card { max-width: 420px; }
+}
+@container cs-sections (max-width: 640px) {
+  .cs-cols--2, .cs-cols--3, .cs-cols--steps.cs-cols--2 { --cols: 1; }
+  .cs-tiles, .cs-tiles--2, .cs-metrics--2, .cs-handoff, .cs-compare, .cs-compare--wide { grid-template-columns: minmax(0, 1fr); }
+  .cs-flow { grid-template-columns: minmax(0, 1fr); }
+  .cs-metric__value { font-size: 36px; }
+}
+@container cs-sections (max-width: 380px) { .cs-cols--4 { --cols: 1; } }
+@container cs-panel (max-width: 860px) {
+  .cs-panel__row--center { justify-items: start; }
+  .cs-panel__row > .cs-fig__item, .cs-panel__row > .cs-chart { justify-self: center; }
+}
