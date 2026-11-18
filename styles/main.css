@@ -90,19 +90,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
    cantos retos (6px, botões são cápsulas), texto pequeno, fundo suave translúcido
    em vez de cor cheia, ponto colorido de categoria e nenhum efeito de hover. */
 .tag {
-  --tag-bg: rgb(255 255 255 / .07); --tag-fg: var(--neutral-300); --tag-dot: transparent;
-  display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 6px; border: 0;
+  --tag-bg: var(--color-tag-neutral-bg); --tag-fg: var(--color-tag-neutral-fg); --tag-dot: transparent;
+  display: inline-flex; align-items: center; gap: var(--spacing-1); padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-xs); border: 0;
   background: var(--tag-bg); color: var(--tag-fg); font: 600 12px/1.35 var(--font-family); letter-spacing: .01em; white-space: nowrap; cursor: default;
 }
-.tag--brand, .tag--accent { padding-left: 9px; }
 .tag--brand::before, .tag--accent::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--tag-dot); flex: none; }
-.tag--brand  { --tag-bg: rgb(151 71 255 / .18); --tag-fg: var(--purple-200); --tag-dot: var(--purple-400); }
-.tag--accent { --tag-bg: rgb(189 234 60 / .13); --tag-fg: var(--lime-300); --tag-dot: var(--lime-400); }
-.tag--neutral, .tag--outline { --tag-bg: rgb(255 255 255 / .07); --tag-fg: var(--neutral-300); }
-/* fundo claro (tema claro e cards de projeto, que são sempre claros) */
-:root[data-theme="light"] .tag, .project-card .tag { --tag-bg: rgb(0 0 0 / .06); --tag-fg: var(--neutral-600); }
-:root[data-theme="light"] .tag--brand, .project-card .tag--brand { --tag-bg: var(--purple-50); --tag-fg: var(--purple-700); --tag-dot: var(--purple-500); }
-:root[data-theme="light"] .tag--accent, .project-card .tag--accent { --tag-bg: var(--lime-100); --tag-fg: var(--lime-800); --tag-dot: var(--lime-600); }
+.tag--brand  { --tag-bg: var(--color-tag-brand-bg); --tag-fg: var(--color-tag-brand-fg); --tag-dot: var(--color-tag-brand-dot); }
+.tag--accent { --tag-bg: var(--color-tag-accent-bg); --tag-fg: var(--color-tag-accent-fg); --tag-dot: var(--color-tag-accent-dot); }
+/* cards de projeto são sempre claros: usam os valores do tema claro */
+.project-card .tag { --tag-bg: rgb(0 0 0 / .06); --tag-fg: var(--neutral-600); }
+.project-card .tag--brand { --tag-bg: var(--purple-50); --tag-fg: var(--purple-700); --tag-dot: var(--purple-500); }
+.project-card .tag--accent { --tag-bg: var(--lime-100); --tag-fg: var(--lime-800); --tag-dot: var(--lime-600); }
 .tag-list { display: flex; flex-wrap: wrap; gap: var(--spacing-2); list-style: none; padding: 0; }
 
 /* ---------- Link ---------- */

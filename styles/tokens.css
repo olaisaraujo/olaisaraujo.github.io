@@ -119,6 +119,11 @@
   --color-icon-accent: var(--lime-400);
   --color-icon-on-brand: var(--neutral-0);
 
+  /* tags (etiquetas não clicáveis) */
+  --color-tag-brand-bg: rgb(151 71 255 / .18); --color-tag-brand-fg: var(--purple-200); --color-tag-brand-dot: var(--purple-400);
+  --color-tag-accent-bg: rgb(189 234 60 / .13); --color-tag-accent-fg: var(--lime-300); --color-tag-accent-dot: var(--lime-400);
+  --color-tag-neutral-bg: rgb(255 255 255 / .07); --color-tag-neutral-fg: var(--neutral-300);
+
   --color-feedback-success: var(--green-400);
   --color-feedback-warning: var(--amber-400);
   --color-feedback-error: var(--red-400);
@@ -168,6 +173,10 @@
   --color-icon-brand: var(--purple-500);
   --color-icon-accent: var(--purple-700);
   --color-icon-on-brand: var(--neutral-0);
+
+  --color-tag-brand-bg: var(--purple-50); --color-tag-brand-fg: var(--purple-700); --color-tag-brand-dot: var(--purple-500);
+  --color-tag-accent-bg: var(--lime-100); --color-tag-accent-fg: var(--lime-800); --color-tag-accent-dot: var(--lime-600);
+  --color-tag-neutral-bg: rgb(0 0 0 / .06); --color-tag-neutral-fg: var(--neutral-600);
 
   --color-feedback-success: var(--green-600);
   --color-feedback-warning: var(--amber-600);
