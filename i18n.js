@@ -64,7 +64,7 @@
     'card.mis.title': "MIS Communities",
     'card.mis.desc': "A feature built from scratch for brands and creators: +519% engagement in Dove’s community.",
     'card.feed.tag1': "A/B test",
-    'card.feed.title': "Watch first, sign in later",
+    'card.feed.title': "Watch first, sign in later: GloboPop’s anonymous feed",
     'card.feed.desc': "Watch before logging in: an invite at the right moment against 75% drop-off before the 1st video.",
     'card.ge.tag0': "Data & AI",
     'card.ge.tag1': "Sports",
