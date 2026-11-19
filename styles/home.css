@@ -383,3 +383,6 @@ img.gallery__photo { padding: 0; }
 @media (max-width: 640px) { .cta-card__btn { width: 100%; justify-content: center; } }
 .cta-card__text { flex: 1 1 560px; max-width: 1040px; }
 .final-cta__phrase { max-width: none; font-size: clamp(34px, 5.8vw, 92px); }
+
+/* celular: o botão "projetos" do topo sai, porque o menu fixo embaixo já leva para o mesmo lugar */
+@media (max-width: 768px) { .intro__projects { display: none; } }
