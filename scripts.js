@@ -18,11 +18,17 @@
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
   // Animação de entrada
+  // Começa a aparecer antes de entrar na tela (margem embaixo), para nunca chegar "preto" num scroll rápido no celular.
+  // Cards de um trilho horizontal aparecem todos juntos: os que ficam fora da tela, à direita, já estão prontos ao arrastar.
   const reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
+    const show = el => { el.classList.add('is-visible'); io.unobserve(el); };
     const io = new IntersectionObserver(entries => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
-    }), { threshold: 0.12 });
+      if (!e.isIntersecting) return;
+      const track = e.target.closest('[data-hscroll-track], .cs-cover__shots');
+      if (track) track.querySelectorAll('.reveal:not(.is-visible)').forEach(show);
+      show(e.target);
+    }), { threshold: 0, rootMargin: '0px 0px 20% 0px' });
     reveals.forEach(el => io.observe(el));
   } else reveals.forEach(el => el.classList.add('is-visible'));
 
@@ -43,6 +49,21 @@
     map.forEach((_, section) => io.observe(section));
   };
   spy(document.querySelectorAll('.menu-toggle a[href*="#"]'));
+  // Menu flutuante do celular: some ao rolar para baixo e volta ao rolar para cima, no topo e no fim da página
+  const mt = document.querySelector('.menu-toggle');
+  if (mt) {
+    let lastY = scrollY, ticking = false;
+    addEventListener('scroll', () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        const y = scrollY, end = y + innerHeight >= document.documentElement.scrollHeight - 80;
+        if (y < 120 || end || y < lastY - 6) mt.classList.remove('is-hidden');
+        else if (y > lastY + 6) mt.classList.add('is-hidden');
+        lastY = y; ticking = false;
+      });
+    }, { passive: true });
+    mt.addEventListener('focusin', () => mt.classList.remove('is-hidden'));
+  }
   spy(document.querySelectorAll('.case-toc a'));
 
   // Formulário de contato: abre o e-mail do visitante já preenchido
@@ -227,7 +248,7 @@
     timelines.forEach(tl => {
       const r = tl.getBoundingClientRect();
       tl.style.setProperty('--tl', clamp01((vh * .72 - r.top) / r.height).toFixed(4));
-      tl.querySelectorAll('.cv__item').forEach(it => { if (it.getBoundingClientRect().top < vh * .78) it.classList.add('is-in'); });
+      tl.querySelectorAll('.cv__item').forEach(it => { if (it.getBoundingClientRect().top < vh * .96) it.classList.add('is-in'); });
     });
 
     // galeria: cada foto anda num ritmo diferente (parallax leve)
@@ -362,7 +383,7 @@
       if (!el.matches('img, video')) return;
       const wrap = document.createElement('span'); wrap.className = 'cs-zoom' + (el.classList.contains('cs-video') ? ' cs-zoom--video' : '');
       el.before(wrap); wrap.append(el);
-      wrap.insertAdjacentHTML('beforeend', `<span class="cs-phone__cta" aria-hidden="true">${icon}<span class="cs-phone__cta-hover">${el.closest('[lang="en"]') ? 'click to expand' : 'clique para ampliar'}</span><span class="cs-phone__cta-touch">${el.closest('[lang="en"]') ? 'tap to expand' : 'toque para ampliar'}</span></span>`);
+      wrap.insertAdjacentHTML('beforeend', `<span class="cs-phone__cta" aria-hidden="true">${icon}<span class="cs-phone__cta-hover">${el.closest('[lang="en"]') ? 'click to expand' : 'clique para ampliar'}</span><span class="cs-phone__cta-touch">${el.closest('[lang="en"]') ? 'expand' : 'ampliar'}</span></span>`);
       wrap.dataset.csExpand = ''; el.removeAttribute('data-cs-expand');
       wrap.tabIndex = 0; wrap.setAttribute('role', 'button');
       const what = el.getAttribute('alt') || el.getAttribute('aria-label') || '';

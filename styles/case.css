@@ -143,6 +143,9 @@
   .cs-stats, .cs-metrics { gap: var(--spacing-8); }
   .cs-stat, .cs-metrics .cs-metric { width: 100%; }
   .cs-model { padding-left: 0; }
+  .cs-chips { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .cs-chip { padding: 8px 16px; font-size: 16px; }
+  .cs-chips__arrow { rotate: 90deg; margin-left: 20px; line-height: 1.2; }
   .cs-speech { flex-direction: column; align-items: flex-start; }
   .cs-speech > img { width: 72px; height: 72px; }
   .cs-bubble__quote { font-size: 18px; }
@@ -207,9 +210,9 @@
 html:not(.has-cursor-ring) .cs-phone:hover::after, .cs-phone:focus-visible::after { opacity: 1; }
 html:not(.has-cursor-ring) [data-cs-expand]:hover .cs-phone__cta, [data-cs-expand]:focus-visible .cs-phone__cta { opacity: 1; transform: translate(-50%, 0); }
 @media (hover: none) {
-  .cs-phone__cta { opacity: 1; transform: translate(-50%, 0); bottom: 5%; padding: 7px 12px; font-size: 12px; gap: 6px; background: rgb(255 255 255 / .92); }
-  .cs-zoom .cs-phone__cta { bottom: 10px; }
-  .cs-phone__cta .icon { width: 13px; height: 13px; }
+  .cs-phone__cta { opacity: 1; transform: translate(-50%, 0); bottom: 5%; padding: 5px 10px; font-size: 11px; gap: 4px; background: rgb(255 255 255 / .92); box-shadow: 0 4px 12px rgb(0 0 0 / .3); }
+  .cs-zoom .cs-phone__cta { bottom: 8px; }
+  .cs-phone__cta .icon { width: 12px; height: 12px; }
   .cs-phone__cta-hover { display: none; }
   .cs-phone__cta-touch { display: inline; }
 }
@@ -486,4 +489,14 @@ html:not(.has-cursor-ring) [data-cs-expand]:hover .cs-phone__cta, [data-cs-expan
 @container cs-panel (max-width: 860px) {
   .cs-panel__row--center { justify-items: start; }
   .cs-panel__row > .cs-fig__item, .cs-panel__row > .cs-chart { justify-self: center; }
+}
+
+/* selo de ampliar nunca fica mais largo que a imagem: em imagens estreitas mostra só o ícone */
+.cs-zoom:not(.cs-zoom--video), .cs-phone { container: cs-zoom / inline-size; }
+.cs-phone__cta { max-width: calc(100% - 16px); }
+.cs-screen > .cs-zoom, .cs-next-phase .cs-screen > .cs-zoom { width: 100%; }
+@container cs-zoom (max-width: 160px) {
+  .cs-phone__cta { padding: 8px; gap: 0; }
+  .cs-phone__cta-hover, .cs-phone__cta-touch { display: none !important; }
+  .cs-phone__cta .icon { width: 14px; height: 14px; }
 }

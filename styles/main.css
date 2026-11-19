@@ -139,6 +139,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   box-shadow: var(--shadow-md);
 }
 .menu-toggle a { display: inline-flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-3) var(--spacing-5); border-radius: var(--radius-full); font: var(--text-label-m); letter-spacing: var(--tracking-tight); color: var(--color-text-primary); white-space: nowrap; }
+/* celular: menor, acima da área segura do aparelho, e some enquanto a pessoa rola para baixo lendo */
+@media (max-width: 768px) {
+  .menu-toggle { bottom: max(var(--spacing-3), calc(env(safe-area-inset-bottom) + var(--spacing-2))); gap: var(--spacing-1); padding: var(--spacing-1); border-width: 1px; background: color-mix(in srgb, var(--color-bg-elevated) 92%, transparent); transition: translate .35s var(--ease-out, ease), opacity .3s ease; }
+  .menu-toggle a { padding: var(--spacing-2) var(--spacing-4); font: var(--text-label-s); }
+  .menu-toggle a .icon { width: 16px; height: 16px; }
+  .menu-toggle.is-hidden { translate: -50% calc(100% + 32px); opacity: 0; pointer-events: none; }
+}
 .menu-toggle a.is-active { background: var(--color-surface-brand); color: var(--color-text-on-brand); }
 .menu-toggle a:not(.is-active) .icon { display: none; }
 
@@ -334,6 +341,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- Reveal on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
+@media (hover: none) { .reveal { transform: translateY(12px); transition-duration: .45s; } } /* toque: entrada mais curta */
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
